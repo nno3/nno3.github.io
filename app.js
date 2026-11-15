@@ -12,7 +12,30 @@
         }, 1700);
     }
 
-    var items = document.querySelectorAll(".card, .panel, .role");
+    var tabs = document.querySelectorAll("[data-tab]");
+    var panels = document.querySelectorAll("[data-panel]");
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            var name = tab.getAttribute("data-tab");
+            tabs.forEach(function (item) {
+                item.setAttribute("aria-selected", item === tab ? "true" : "false");
+            });
+            panels.forEach(function (panel) {
+                panel.hidden = panel.getAttribute("data-panel") !== name;
+            });
+        });
+    });
+
+    var scene = document.querySelector(".scene");
+    if (scene && !reduce && window.matchMedia("(pointer: fine)").matches) {
+        window.addEventListener("pointermove", function (event) {
+            var x = (event.clientX / window.innerWidth - 0.5) * 16;
+            var y = (event.clientY / window.innerHeight - 0.5) * 12;
+            scene.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
+        });
+    }
+
+    var items = document.querySelectorAll(".expert, .extra, .feature, .role");
     if (reduce || !("IntersectionObserver" in window)) {
         items.forEach(function (el) { el.classList.add("in"); });
         return;
