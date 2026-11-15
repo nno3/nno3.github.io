@@ -163,7 +163,26 @@ h2 {
     letter-spacing: -0.04em;
 }
 
-h2.sub { margin-top: 42px; font-size: 26px; }
+h2.sub { margin-top: 36px; font-size: 26px; }
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chips li {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
 
 .project {
     display: grid;
