@@ -38,193 +38,241 @@
     </header>
 
     <section id="skills">
-        <h2>Languages</h2>
-        <ul class="chips">
-            <li>Python</li>
-            <li>SQL</li>
-            <li>R</li>
-            <li>JavaScript</li>
-            <li>Java</li>
-            <li>C++</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Arabic</li>
-            <li>English</li>
-        </ul>
-        <h2 class="sub">Skills</h2>
-        <ul class="chips">
-            <li>Power BI</li>
-            <li>pandas</li>
-            <li>scikit-learn</li>
-            <li>Regression</li>
-            <li>Random Forest</li>
-            <li>Clustering</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>PostgreSQL</li>
-            <li>D3.js</li>
-            <li>Git</li>
-        </ul>
+        <h2>Skills</h2>
+        <div class="panels">
+            <article class="panel">
+                <h3>Programming</h3>
+                <ul class="tags">
+                    <li>Python</li><li>SQL</li><li>R</li><li>JavaScript</li><li>Java</li><li>C++</li>
+                </ul>
+            </article>
+            <article class="panel">
+                <h3>Spoken</h3>
+                <ul class="tags">
+                    <li>Arabic</li><li>English</li>
+                </ul>
+                <p>Both fluent.</p>
+            </article>
+            <article class="panel">
+                <h3>Data</h3>
+                <ul class="tags">
+                    <li>Power BI</li><li>pandas</li><li>scikit-learn</li><li>Regression</li><li>Random Forest</li><li>Clustering</li>
+                </ul>
+            </article>
+            <article class="panel">
+                <h3>Software</h3>
+                <ul class="tags">
+                    <li>React</li><li>Node.js</li><li>PostgreSQL</li><li>D3.js</li><li>HTML</li><li>CSS</li><li>Git</li>
+                </ul>
+            </article>
+            <article class="panel span">
+                <h3>Cybersecurity</h3>
+                <ul class="tags">
+                    <li>Wireshark</li><li>TCP</li><li>TLS</li><li>Kerberos</li><li>DNS</li><li>Encryption</li><li>Digital signatures</li>
+                </ul>
+            </article>
+        </div>
     </section>
 
     <section id="work">
         <h2>Work</h2>
-        <article class="project">
-            <p class="meta">Dissertation · Leicester</p>
-            <div>
-                <h3><a href="https://neuroease-dashboard.onrender.com/">NeuroEase</a></h3>
-                <p>An individual final-year platform for dementia caregivers and patients. A Node.js API, PostgreSQL, and two React apps. It handles reminders, messages, calls, and location alerts. A study with 25 people gave usability scores of 76.4 for caregivers and 78.7 for patients.</p>
-            </div>
-            <p class="links"><a href="https://neuroease-dashboard.onrender.com/">Caregiver</a><a href="https://neuroease-patient.onrender.com/">Patient</a><a href="https://github.com/nno3/neuroease">Code</a></p>
-        </article>
-        <article class="project">
-            <p class="meta">Power BI · Newcastle</p>
-            <div>
-                <h3><a href="https://nno3.github.io/disease-spread/">Disease spread</a></h3>
-                <p>An interactive dashboard for a simulated airborne disease across Manchester. Three views show severity, how closely four runs agree, and how a change in wind changes the spread.</p>
-                <img class="shot contain" src="images/disease.png" alt="Disease spread dashboard. Orange circles over Greater Manchester and a bar chart of severity for scenario 245.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/disease-spread/">Live</a><a href="https://github.com/nno3/disease-spread">Code</a></p>
-        </article>
-        <article class="project">
-            <p class="meta">Python · Leicester</p>
-            <div>
-                <h3><a href="https://nno3.github.io/street-crime/">Street crime, 2023</a></h3>
-                <p>Metropolitan Police records for 2023. The pipeline cleans about 1.1 million incidents, predicts the monthly count in each small area, and groups those areas into five profiles.</p>
-                <img class="shot contain" src="images/crime.png" alt="Bar chart of the twelve London areas with the most street incidents in 2023. Westminster is the longest bar.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/street-crime/">Live</a><a href="https://github.com/nno3/street-crime">Code</a></p>
-        </article>
-        <article class="project">
-            <p class="meta">D3.js · Leicester</p>
-            <div>
-                <h3><a href="https://nno3.github.io/BrightonGreen/">GreenBrighton</a></h3>
-                <p>An individual site for eco-friendly places in Brighton and Hove. Charts and maps, shaped by six user interviews, and built to WCAG 2.1 AA.</p>
-                <img class="shot" src="images/greenbrighton.png" alt="GreenBrighton homepage, with the Brighton pier behind the welcome text and an events panel.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/BrightonGreen/">Live</a><a href="https://github.com/nno3/BrightonGreen">Code</a></p>
-        </article>
-        <article class="project">
-            <p class="meta">Group · I led the build</p>
-            <div>
-                <h3><a href="https://nno3.github.io/skills-hive/">Skills Hive</a></h3>
-                <p>A learning site with courses, friends, and a game. I led the group and built the dashboard, the course page, the HexaHive game, and the chatbot.</p>
-                <img class="shot" src="images/skills.png" alt="Skills Hive sign-in, with a yellow panel and the honeycomb mark.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/skills-hive/">Live</a><a href="https://github.com/nno3/skills-hive">Code</a></p>
-        </article>
-        <article class="project">
-            <p class="meta">Joint with Mohammad Abdullah Malik</p>
-            <div>
-                <h3><a href="https://nno3.github.io/co2-emissions/">CO₂ emissions</a></h3>
-                <p>A world map of 2002 emissions, Japan’s population against emissions, and a bar chart of 2001 against 2002.</p>
-            </div>
-            <p class="links"><a href="https://nno3.github.io/co2-emissions/">Live</a><a href="https://github.com/nno3/co2-emissions">Code</a></p>
-        </article>
-        <article class="project">
-            <p class="meta">4th place · Project:Hack 20</p>
-            <div>
-                <h3><a href="https://nno3.github.io/construction-thermometer/">Construction thermometer</a></h3>
-                <p>A dashboard I built alone. Seven construction sectors, read from public headlines.</p>
-                <img class="shot" src="images/thermometer.png" alt="Construction thermometer showing Residential at 20 degrees, with sector buttons along the top.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/construction-thermometer/">Live</a><a href="https://github.com/nno3/construction-thermometer">Code</a></p>
-        </article>
 
-        <h2 class="sub">More work</h2>
-        <article class="project compact">
-            <p class="meta">Pair with Muhammad Abdullah Malik</p>
-            <div>
-                <h3><a href="https://nno3.github.io/network-security/">Network security</a></h3>
-                <p>Four teaching captures. Each one is a normal protocol, then the weakness in the packets.</p>
-                <img class="shot contain" src="images/network.png" alt="Network security page open on the TCP tab, with the handshake notes.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/network-security/">Live</a><a href="https://github.com/nno3/network-security">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">Pair with Muhammad Abdullah Malik</p>
-            <div>
-                <h3><a href="https://nno3.github.io/file-recovery/">File recovery</a></h3>
-                <p>Java programs that lock one sample file and recover it after the server can verify who is asking.</p>
-            </div>
-            <p class="links"><a href="https://nno3.github.io/file-recovery/">Live</a><a href="https://github.com/nno3/file-recovery">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">Trio · equal share</p>
-            <div>
-                <h3><a href="https://nno3.github.io/clinic-api/">Clinic</a></h3>
-                <p>With Ajan Mudey and Aisha Tasneem Muhammad. Doctors, patients, appointments, and medical records.</p>
-                <img class="shot contain" src="images/clinic.png" alt="Clinic page with patient, doctor, and appointment tabs, and a form to add a patient.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/clinic-api/">Live</a><a href="https://github.com/nno3/clinic-api">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">Trio</p>
-            <div>
-                <h3><a href="https://nno3.github.io/course-manager/">Course manager</a></h3>
-                <p>An Android app for courses and enrolled students, with the same screens in the browser.</p>
-                <img class="shot contain" src="images/course.png" alt="Course manager showing a phone-shaped list of two courses, each with a delete button.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/course-manager/">Live</a><a href="https://github.com/nno3/course-manager">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">Trio · CO2102</p>
-            <div>
-                <h3><a href="https://nno3.github.io/university-database/">University database</a></h3>
-                <p>With Ajan Mudey and Aisha Tasneem Muhammad. Departments, staff, students, and courses. The page runs the SQL.</p>
-            </div>
-            <p class="links"><a href="https://nno3.github.io/university-database/">Live</a><a href="https://github.com/nno3/university-database">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">With Ayan Muday · CO3105</p>
-            <div>
-                <h3><a href="https://nno3.github.io/project-allocation/">Project allocation</a></h3>
-                <p>Change the choices, then allocate. The page runs the same steps as the C++ program.</p>
-            </div>
-            <p class="links"><a href="https://nno3.github.io/project-allocation/">Live</a><a href="https://github.com/nno3/project-allocation">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">Group · I built the site</p>
-            <div>
-                <h3><a href="https://github.com/nno3/techcon">TechCon</a></h3>
-                <p>A CO1101 conference site: home, registration, a three-day schedule, speakers, and contact.</p>
-            </div>
-            <p class="links"><a href="https://github.com/nno3/techcon">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">Individual</p>
-            <div>
-                <h3><a href="https://nno3.github.io/saudi-interactive-map/">Saudi Arabia</a></h3>
-                <p>A personal map. Mark each city as visited, lived in, or stopped by.</p>
-                <img class="shot contain" src="images/saudi.png" alt="Map of Saudi Arabia with city dots and a colour legend.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/saudi-interactive-map/">Live</a><a href="https://github.com/nno3/saudi-interactive-map">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">C++ · OpenCV</p>
-            <div>
-                <h3><a href="https://nno3.github.io/face-detector/">Face detector</a></h3>
-                <p>The page runs the same frontal-face cascade on a photo or the webcam.</p>
-            </div>
-            <p class="links"><a href="https://nno3.github.io/face-detector/">Live</a><a href="https://github.com/nno3/face-detector">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">C++</p>
-            <div>
-                <h3><a href="https://nno3.github.io/file-system/">File system</a></h3>
-                <p>Folders and files kept in memory. The page runs the same commands.</p>
-            </div>
-            <p class="links"><a href="https://nno3.github.io/file-system/">Live</a><a href="https://github.com/nno3/file-system">Code</a></p>
-        </article>
-        <article class="project compact">
-            <p class="meta">Java · Swing</p>
-            <div>
-                <h3><a href="https://nno3.github.io/snake/">Snake</a></h3>
-                <p>A desktop game. The page plays the same one.</p>
-                <img class="shot" src="images/snake.png" alt="Snake game on a black grid, score zero, with a short green snake and a red apple.">
-            </div>
-            <p class="links"><a href="https://nno3.github.io/snake/">Live</a><a href="https://github.com/nno3/snake">Code</a></p>
-        </article>
+        <h3 class="group">Data</h3>
+        <div class="cards">
+            <article class="card wide">
+                <a class="card-media" href="https://nno3.github.io/street-crime/"><img class="fit" src="images/crime.png" alt="Bar chart of the twelve London areas with the most street incidents in 2023."></a>
+                <div class="card-body">
+                    <p class="meta">Data · Python</p>
+                    <h3><a href="https://nno3.github.io/street-crime/">Street crime, 2023</a></h3>
+                    <p>About 1.1 million Metropolitan Police records. A random forest predicts the monthly count in each small area, and clustering finds five profiles.</p>
+                    <ul class="tags"><li>Python</li><li>pandas</li><li>scikit-learn</li><li>Random Forest</li><li>Clustering</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/street-crime/">Live</a><a href="https://github.com/nno3/street-crime">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/disease-spread/"><img class="fit" src="images/disease.png" alt="Disease spread dashboard for scenario 245."></a>
+                <div class="card-body">
+                    <p class="meta">Data · Power BI</p>
+                    <h3><a href="https://nno3.github.io/disease-spread/">Disease spread</a></h3>
+                    <p>Three views of a simulated airborne disease across Manchester: severity, agreement across four runs, and a change in wind.</p>
+                    <ul class="tags"><li>Power BI</li><li>Maps</li><li>KPI cards</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/disease-spread/">Live</a><a href="https://github.com/nno3/disease-spread">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/co2-emissions/"><span class="placeholder">CO₂</span></a>
+                <div class="card-body">
+                    <p class="meta">Data · with Mohammad Abdullah Malik</p>
+                    <h3><a href="https://nno3.github.io/co2-emissions/">CO₂ emissions</a></h3>
+                    <p>A 2002 emissions map, Japan’s population against emissions, and 2001 against 2002.</p>
+                    <ul class="tags"><li>D3.js</li><li>Data visualisation</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/co2-emissions/">Live</a><a href="https://github.com/nno3/co2-emissions">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/construction-thermometer/"><img src="images/thermometer.png" alt="Construction thermometer showing Residential at 20 degrees."></a>
+                <div class="card-body">
+                    <p class="meta">Data · 4th at Project:Hack 20</p>
+                    <h3><a href="https://nno3.github.io/construction-thermometer/">Construction thermometer</a></h3>
+                    <p>A dashboard I built alone. Seven construction sectors, read from public headlines.</p>
+                    <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/construction-thermometer/">Live</a><a href="https://github.com/nno3/construction-thermometer">Code</a></p>
+                </div>
+            </article>
+        </div>
+
+        <h3 class="group">Cybersecurity</h3>
+        <p class="group-note">Pair work with Muhammad Abdullah Malik.</p>
+        <div class="cards">
+            <article class="card wide cyber">
+                <a class="card-media" href="https://nno3.github.io/network-security/"><img class="fit" src="images/network.png" alt="Network security page open on the TCP tab."></a>
+                <div class="card-body">
+                    <p class="meta">Cybersecurity · March 2026</p>
+                    <h3><a href="https://nno3.github.io/network-security/">Network security</a></h3>
+                    <p>Four teaching captures. Each one is a normal protocol, then the weakness in the packets.</p>
+                    <ul class="tags"><li>Wireshark</li><li>TCP</li><li>TLS</li><li>Kerberos</li><li>DNS</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/network-security/">Live</a><a href="https://github.com/nno3/network-security">Code</a></p>
+                </div>
+            </article>
+            <article class="card cyber">
+                <a class="card-media" href="https://nno3.github.io/file-recovery/"><span class="placeholder">Java</span></a>
+                <div class="card-body">
+                    <p class="meta">Cybersecurity</p>
+                    <h3><a href="https://nno3.github.io/file-recovery/">File recovery</a></h3>
+                    <p>One sample file is recovered only after the server can verify who is asking.</p>
+                    <ul class="tags"><li>Java</li><li>Encryption</li><li>Digital signatures</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/file-recovery/">Live</a><a href="https://github.com/nno3/file-recovery">Code</a></p>
+                </div>
+            </article>
+        </div>
+
+        <h3 class="group">Software</h3>
+        <div class="cards">
+            <article class="card wide">
+                <a class="card-media" href="https://neuroease-dashboard.onrender.com/"><span class="placeholder">NeuroEase</span></a>
+                <div class="card-body">
+                    <p class="meta">Software · Dissertation</p>
+                    <h3><a href="https://neuroease-dashboard.onrender.com/">NeuroEase</a></h3>
+                    <p>An individual platform for dementia caregivers and patients. Reminders, messages, calls, and location alerts. A study with 25 people scored 76.4 and 78.7.</p>
+                    <ul class="tags"><li>Node.js</li><li>React</li><li>PostgreSQL</li><li>Socket.IO</li></ul>
+                    <p class="links"><a href="https://neuroease-dashboard.onrender.com/">Caregiver</a><a href="https://neuroease-patient.onrender.com/">Patient</a><a href="https://github.com/nno3/neuroease">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/skills-hive/"><img src="images/skills.png" alt="Skills Hive sign-in with a yellow panel."></a>
+                <div class="card-body">
+                    <p class="meta">Software · I led the build</p>
+                    <h3><a href="https://nno3.github.io/skills-hive/">Skills Hive</a></h3>
+                    <p>Courses, friends, and a game. I built the dashboard, the course page, HexaHive, and the chatbot.</p>
+                    <ul class="tags"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/skills-hive/">Live</a><a href="https://github.com/nno3/skills-hive">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/clinic-api/"><img class="fit" src="images/clinic.png" alt="Clinic page with tabs for patients, doctors, and appointments."></a>
+                <div class="card-body">
+                    <p class="meta">Software · trio, equal share</p>
+                    <h3><a href="https://nno3.github.io/clinic-api/">Clinic</a></h3>
+                    <p>With Ajan Mudey and Aisha Tasneem Muhammad. Doctors, patients, appointments, and records.</p>
+                    <ul class="tags"><li>Java</li><li>Spring Boot</li><li>REST</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/clinic-api/">Live</a><a href="https://github.com/nno3/clinic-api">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/course-manager/"><img class="fit" src="images/course.png" alt="Course manager showing a list of two courses."></a>
+                <div class="card-body">
+                    <p class="meta">Software · trio</p>
+                    <h3><a href="https://nno3.github.io/course-manager/">Course manager</a></h3>
+                    <p>An Android app for courses and enrolled students, with the same screens in the browser.</p>
+                    <ul class="tags"><li>Android</li><li>Java</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/course-manager/">Live</a><a href="https://github.com/nno3/course-manager">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/university-database/"><span class="placeholder">SQL</span></a>
+                <div class="card-body">
+                    <p class="meta">Software · CO2102</p>
+                    <h3><a href="https://nno3.github.io/university-database/">University database</a></h3>
+                    <p>With Ajan Mudey and Aisha Tasneem Muhammad. Departments, staff, students, and courses.</p>
+                    <ul class="tags"><li>SQL</li><li>MySQL</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/university-database/">Live</a><a href="https://github.com/nno3/university-database">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/project-allocation/"><span class="placeholder">C++</span></a>
+                <div class="card-body">
+                    <p class="meta">Software · with Ayan Muday</p>
+                    <h3><a href="https://nno3.github.io/project-allocation/">Project allocation</a></h3>
+                    <p>Change the choices, then allocate. The page runs the same steps as the C++ program.</p>
+                    <ul class="tags"><li>C++</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/project-allocation/">Live</a><a href="https://github.com/nno3/project-allocation">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/face-detector/"><span class="placeholder">OpenCV</span></a>
+                <div class="card-body">
+                    <p class="meta">Software</p>
+                    <h3><a href="https://nno3.github.io/face-detector/">Face detector</a></h3>
+                    <p>The same frontal-face cascade on a photo or the webcam.</p>
+                    <ul class="tags"><li>C++</li><li>OpenCV</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/face-detector/">Live</a><a href="https://github.com/nno3/face-detector">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/file-system/"><span class="placeholder">C++</span></a>
+                <div class="card-body">
+                    <p class="meta">Software</p>
+                    <h3><a href="https://nno3.github.io/file-system/">File system</a></h3>
+                    <p>Folders and files kept in memory. The page runs the same commands.</p>
+                    <ul class="tags"><li>C++</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/file-system/">Live</a><a href="https://github.com/nno3/file-system">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/snake/"><img src="images/snake.png" alt="Snake on a black grid with a red apple."></a>
+                <div class="card-body">
+                    <p class="meta">Software</p>
+                    <h3><a href="https://nno3.github.io/snake/">Snake</a></h3>
+                    <p>A desktop game. The page plays the same one.</p>
+                    <ul class="tags"><li>Java</li><li>Swing</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/snake/">Live</a><a href="https://github.com/nno3/snake">Code</a></p>
+                </div>
+            </article>
+        </div>
+
+        <h3 class="group">Sites</h3>
+        <div class="cards">
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/BrightonGreen/"><img src="images/greenbrighton.png" alt="GreenBrighton homepage with the Brighton pier."></a>
+                <div class="card-body">
+                    <p class="meta">Site · individual</p>
+                    <h3><a href="https://nno3.github.io/BrightonGreen/">GreenBrighton</a></h3>
+                    <p>Eco-friendly places in Brighton and Hove, shaped by six interviews and built to WCAG 2.1 AA.</p>
+                    <ul class="tags"><li>D3.js</li><li>JavaScript</li><li>Accessibility</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/BrightonGreen/">Live</a><a href="https://github.com/nno3/BrightonGreen">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://nno3.github.io/saudi-interactive-map/"><img class="fit" src="images/saudi.png" alt="Map of Saudi Arabia with city dots."></a>
+                <div class="card-body">
+                    <p class="meta">Site · individual</p>
+                    <h3><a href="https://nno3.github.io/saudi-interactive-map/">Saudi Arabia</a></h3>
+                    <p>Mark each city as visited, lived in, or stopped by.</p>
+                    <ul class="tags"><li>JavaScript</li><li>Maps</li></ul>
+                    <p class="links"><a href="https://nno3.github.io/saudi-interactive-map/">Live</a><a href="https://github.com/nno3/saudi-interactive-map">Code</a></p>
+                </div>
+            </article>
+            <article class="card">
+                <a class="card-media" href="https://github.com/nno3/techcon"><span class="placeholder">TechCon</span></a>
+                <div class="card-body">
+                    <p class="meta">Site · I built it</p>
+                    <h3><a href="https://github.com/nno3/techcon">TechCon</a></h3>
+                    <p>A CO1101 conference site: home, registration, a three-day schedule, speakers, and contact.</p>
+                    <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                    <p class="links"><a href="https://github.com/nno3/techcon">Code</a></p>
+                </div>
+            </article>
+        </div>
     </section>
 
     <section id="experience">

@@ -12,7 +12,7 @@
         }, 1700);
     }
 
-    var items = document.querySelectorAll(".project, .role");
+    var items = document.querySelectorAll(".card, .panel, .role");
     if (reduce || !("IntersectionObserver" in window)) {
         items.forEach(function (el) { el.classList.add("in"); });
         return;
