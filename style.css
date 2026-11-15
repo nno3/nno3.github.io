@@ -5,8 +5,7 @@
     --line: #e3ddd3;
     --paper: #f6f3ed;
     --accent: #0f5c56;
-    --serif: "Instrument Serif", Georgia, serif;
-    --sans: "Instrument Sans", "Segoe UI", sans-serif;
+    --sans: Inter, "Segoe UI", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -34,13 +33,12 @@ nav {
     padding: 16px 7vw;
     background: rgba(246, 243, 237, 0.86);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid transparent;
 }
 
 .mark {
     color: var(--ink);
-    font: 600 18px/1 var(--sans);
-    letter-spacing: -0.03em;
+    font: 700 18px/1 var(--sans);
+    letter-spacing: -0.04em;
     text-decoration: none;
 }
 
@@ -70,15 +68,25 @@ main {
 }
 
 .hero {
-    min-height: calc(100vh - 72px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 48px 0 72px;
+    padding: 28px 0 12px;
+}
+
+.hero > * {
+    animation: rise 0.7s ease both;
+}
+
+.hero > *:nth-child(2) { animation-delay: 0.08s; }
+.hero > *:nth-child(3) { animation-delay: 0.16s; }
+.hero > *:nth-child(4) { animation-delay: 0.24s; }
+.hero > *:nth-child(5) { animation-delay: 0.32s; }
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
 }
 
 .eyebrow {
-    margin: 0 0 18px;
+    margin: 0 0 14px;
     color: var(--accent);
     font: 600 13px/1 var(--sans);
     letter-spacing: 0.12em;
@@ -87,18 +95,34 @@ main {
 
 h1 {
     margin: 0;
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(56px, 8.4vw, 108px);
-    line-height: 0.92;
-    letter-spacing: -0.03em;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(46px, 7vw, 84px);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
 }
 
-h1 span { color: #9a9288; }
+.roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin: 10px 0 0;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: -0.045em;
+    line-height: 1.1;
+}
+
+.roles span {
+    color: #c8c1b7;
+    transition: color 0.45s ease;
+}
+
+.roles span.on { color: var(--ink); }
 
 .lede {
-    max-width: 38rem;
-    margin: 28px 0 0;
+    max-width: 40rem;
+    margin: 18px 0 0;
     color: var(--muted);
     font-size: 18px;
 }
@@ -108,7 +132,7 @@ h1 span { color: #9a9288; }
     flex-wrap: wrap;
     align-items: center;
     gap: 18px 22px;
-    margin: 28px 0 0;
+    margin: 22px 0 0;
 }
 
 .btn {
@@ -127,48 +151,57 @@ h1 span { color: #9a9288; }
 }
 
 section {
-    padding-top: 18px;
+    padding-top: 8px;
     scroll-margin-top: 76px;
 }
 
 h2 {
-    margin: 64px 0 8px;
-    font-family: var(--serif);
-    font-size: 42px;
-    font-weight: 400;
-    letter-spacing: -0.03em;
+    margin: 48px 0 8px;
+    font-family: var(--sans);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
 }
 
-h2.sub {
-    margin-top: 56px;
-    font-size: 32px;
-}
+h2.sub { margin-top: 42px; font-size: 26px; }
 
 .project,
 .role {
     display: grid;
-    gap: 6px 28px;
-    padding: 26px 0;
+    gap: 8px 28px;
+    padding: 22px 0;
     border-top: 1px solid var(--line);
 }
 
 .project:last-child,
 .role:last-child { border-bottom: 1px solid var(--line); }
 
+.js .project,
+.js .role {
+    opacity: 0;
+    transform: translateY(14px);
+}
+
+.js .project.in,
+.js .role.in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
 .meta {
     margin: 4px 0 0;
     color: var(--accent);
     font: 600 13px/1.4 var(--sans);
-    letter-spacing: 0.02em;
 }
 
 h3 {
     margin: 0;
-    font: 600 26px/1.2 var(--sans);
+    font: 700 24px/1.2 var(--sans);
     letter-spacing: -0.03em;
 }
 
-.compact h3 { font-size: 22px; }
+.compact h3 { font-size: 20px; }
 
 h3 a {
     color: inherit;
@@ -182,6 +215,22 @@ h3 a:hover { color: var(--accent); }
     margin: 8px 0 0;
     color: var(--muted);
 }
+
+.shot {
+    width: 100%;
+    height: 168px;
+    margin-top: 12px;
+    object-fit: cover;
+    object-position: top center;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    transition: transform 0.35s ease;
+}
+
+.shot.contain { object-fit: contain; }
+
+.shot:hover { transform: translateY(-3px); }
 
 .links {
     display: flex;
@@ -201,25 +250,43 @@ h3 a:hover { color: var(--accent); }
 
 .links a:hover { color: var(--accent); border-color: var(--accent); }
 
-.contact {
-    margin-top: 24px;
-    padding-bottom: 20px;
-}
+.contact { margin-top: 12px; }
 
 .contact .lede { margin-top: 8px; }
 
 @media (min-width: 860px) {
     .project,
     .role {
-        grid-template-columns: 210px 1fr auto;
+        grid-template-columns: 180px 1fr auto;
         align-items: start;
     }
 
-    .role { grid-template-columns: 210px 1fr; }
+    .role { grid-template-columns: 180px 1fr; }
 
-    .links { justify-content: flex-end; margin-top: 4px; }
+    .project > div:has(.shot) {
+        display: grid;
+        grid-template-columns: 1fr 250px;
+        column-gap: 22px;
+        align-items: start;
+    }
+
+    .project > div:has(.shot) h3,
+    .project > div:has(.shot) > p { grid-column: 1; }
+
+    .shot {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        height: 148px;
+        margin-top: 2px;
+    }
+
+    .links { justify-content: flex-end; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    .hero > * { animation: none; }
+    .js .project,
+    .js .role { opacity: 1; transform: none; }
+    .shot { transition: none; }
 }
