@@ -352,24 +352,9 @@ h2 {
 
 .feature-media,
 .tile-shot {
-    position: relative;
     display: block;
     background: #101820;
     overflow: hidden;
-}
-
-.feature-media::after,
-.tile-shot::after {
-    content: "Open";
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    background: var(--ink);
-    color: #12140f;
-    font: 700 12px/1 var(--sans);
-    letter-spacing: 0.04em;
-    padding: 7px 9px;
-    border-radius: 4px;
 }
 
 .feature-media { min-height: 240px; }
