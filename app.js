@@ -26,6 +26,14 @@
         });
     });
 
+    var viewAll = document.getElementById("view-all");
+    if (viewAll) {
+        viewAll.addEventListener("click", function () {
+            document.getElementById("tab-all").click();
+            document.getElementById("work").scrollIntoView();
+        });
+    }
+
     var scene = document.querySelector(".scene");
     if (scene && !reduce && window.matchMedia("(pointer: fine)").matches) {
         window.addEventListener("pointermove", function (event) {
