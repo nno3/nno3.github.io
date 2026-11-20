@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=18">
+    <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
 <nav>
@@ -120,9 +120,9 @@
                 <button type="button" role="tab" data-skill="1" aria-selected="false"><span>02</span><div><h3>Languages</h3><p>Arabic and English, both fluent.</p></div></button>
                 <button type="button" role="tab" data-skill="2" aria-selected="false"><span>03</span><div><h3>Data</h3><p>pandas, PostgreSQL, MySQL, Power BI, D3.js.</p></div></button>
                 <button type="button" role="tab" data-skill="3" aria-selected="false"><span>04</span><div><h3>AI</h3><p>scikit-learn, regression, random forests, clustering, OpenCV, scikit-image.</p></div></button>
-                <button type="button" role="tab" data-skill="4" aria-selected="false"><span>05</span><div><h3>Software</h3><p>React, Node.js, Git, Android, Spring Boot, Socket.IO.</p></div></button>
+                <button type="button" role="tab" data-skill="4" aria-selected="false"><span>05</span><div><h3>Software</h3><p>Git, React, Node.js, Android, Spring Boot, Socket.IO.</p></div></button>
                 <button type="button" role="tab" data-skill="5" aria-selected="false"><span>06</span><div><h3>Cybersecurity</h3><p>Wireshark, TCP, TLS, Kerberos, DNS, encryption, digital signatures.</p></div></button>
-                <button type="button" role="tab" data-skill="6" aria-selected="false"><span>07</span><div><h3>Soft skills</h3><p>Teaching, mentoring, leading a group build, accessibility, lab support.</p></div></button>
+                <button type="button" role="tab" data-skill="6" aria-selected="false"><span>07</span><div><h3>Soft skills</h3><p>Teaching, mentoring, communication, critical thinking, group lead, accessibility, lab support, clear write-ups.</p></div></button>
             </div>
             <div class="demo-panel">
                 <div class="demo is-on" data-demo="0">
@@ -172,12 +172,19 @@
                 </div>
                 <div class="demo" data-demo="6">
                     <p class="mini-k">Soft skills</p>
-                    <div class="tiles">
-                        <div><strong>100+</strong><span>students in each of the labs</span></div>
-                        <div><strong>15</strong><span>first-years mentored</span></div>
-                        <div><strong>Lead</strong><span>Skills Hive, the group build</span></div>
+                    <div class="proof">
+                        <article>
+                            <h3>Communication</h3>
+                            <p>Labs for 100+ students, mentoring, and a pharmacy counter. Arabic and English.</p>
+                        </article>
+                        <article>
+                            <h3>Critical thinking</h3>
+                            <p>On the retinal images, accuracy was the wrong score. An empty guess is already about 0.90, because vessels cover about 9% of the picture. IoU moved the work: 0.14, then 0.54 once the lighting was taken out, then 0.67.</p>
+                        </article>
                     </div>
-                    <p class="foot">Accessibility and lab support sit with the teaching.</p>
+                    <ul class="chips">
+                        <li>Teaching</li><li>Mentoring</li><li>Group lead</li><li>Accessibility</li><li>Lab support</li><li>Clear write-ups</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -211,10 +218,47 @@
     </section>
 
     <section id="work" class="reveal">
+        <p class="kicker">Work</p>
+        <h2>Proudest.</h2>
+        <p class="lede">The four I would open first.</p>
+        <div class="proud">
+            <article class="pcard tilt">
+                <a class="pmedia" style="--mat:#f3ead8" href="https://neuroease-dashboard.onrender.com/" aria-label="NeuroEase"><span class="flag">Two sites</span><span class="paper" aria-hidden="true"><b>76.4</b><b>78.7</b><small>caregiver · patient</small></span></a>
+                <div class="pbody">
+                    <h3><a href="https://neuroease-dashboard.onrender.com/">NeuroEase</a></h3>
+                    <p class="got">A study of 25 people scored 76.4 and 78.7, and the comments changed the interface.</p>
+                    <p class="links mini"><a href="https://neuroease-dashboard.onrender.com/">Caregiver site</a><a class="ghost" href="https://neuroease-patient.onrender.com/">Patient site</a></p>
+                </div>
+            </article>
+            <article class="pcard tilt">
+                <a class="pmedia fit" style="--mat:#dcecc8" href="https://nno3.github.io/street-crime/"><span class="flag">MAE 3.47</span><img src="images/crime.png" alt="Bar chart of London areas with the most street incidents in 2023."></a>
+                <div class="pbody">
+                    <h3><a href="https://nno3.github.io/street-crime/">Street crime, 2023</a></h3>
+                    <p class="got">The forest was closer than the linear model: MAE 3.47 against 4.93.</p>
+                    <p class="links mini"><a href="https://nno3.github.io/street-crime/">Live</a><a class="ghost" href="https://github.com/nno3/street-crime">Code</a></p>
+                </div>
+            </article>
+            <article class="pcard tilt">
+                <a class="pmedia retina" style="--mat:#d9e6fb" href="retina.html" aria-label="Retinal vessels"><span class="flag">0.67 IoU</span></a>
+                <div class="pbody">
+                    <h3><a href="retina.html">Retinal vessels</a></h3>
+                    <p class="got">Reached vessel IoU 0.67, including on images it was not tuned on.</p>
+                    <p class="links mini"><a href="retina.html">Read the result</a></p>
+                </div>
+            </article>
+            <article class="pcard tilt">
+                <a class="pmedia" style="--mat:#e7f4f1" href="boardroom/index.html" aria-label="Boardroom"><span class="flag">4 agents</span><span class="paper" aria-hidden="true"><b>Plan</b><small>CEO, marketing, finance, engineering</small></span></a>
+                <div class="pbody">
+                    <h3><a href="boardroom/index.html">Boardroom</a></h3>
+                    <p class="got">Four agents hand the idea along, and the CEO writes one plan.</p>
+                    <p class="links mini"><a href="boardroom/index.html">Live demo</a><a class="ghost" href="https://github.com/nno3/boardroom">Code</a></p>
+                </div>
+            </article>
+        </div>
         <div class="work-head">
             <div>
-                <p class="kicker">Work</p>
-                <h2>Projects.</h2>
+                <p class="kicker">Everything else</p>
+                <h2>All the work.</h2>
             </div>
             <div class="filters" role="tablist" aria-label="Filter projects">
                 <button type="button" data-filter="all" aria-selected="true">All</button>
@@ -267,13 +311,13 @@
                 </div>
             </article>
             <article class="pcard" data-kind="ai">
-                <a class="pmedia" style="--mat:#e7f4f1" href="https://github.com/nno3/boardroom" aria-label="Boardroom"><span class="flag">4 agents</span><span class="paper" aria-hidden="true"><b>Plan</b><small>CEO, marketing, finance, engineering</small></span></a>
+                <a class="pmedia" style="--mat:#e7f4f1" href="boardroom/index.html" aria-label="Boardroom"><span class="flag">4 agents</span><span class="paper" aria-hidden="true"><b>Plan</b><small>CEO, marketing, finance, engineering</small></span></a>
                 <div class="pbody">
-                    <h3><a href="https://github.com/nno3/boardroom">Boardroom</a></h3>
+                    <h3><a href="boardroom/index.html">Boardroom</a></h3>
                     <p class="got">Four agents hand the idea along, and the CEO writes one business plan.</p>
                     <p class="did">A founder describes an idea. The CEO, marketing, finance, and engineering each see the notes so far. Without a key, the same handoff still runs as a scripted demo.</p>
                     <ul class="boxes"><li>React</li><li>Node.js</li><li>Express</li></ul>
-                    <p class="links mini"><a href="https://github.com/nno3/boardroom">Code</a></p>
+                    <p class="links mini"><a href="boardroom/index.html">Live demo</a><a class="ghost" href="https://github.com/nno3/boardroom">Code</a></p>
                 </div>
             </article>
             <article class="pcard" data-kind="site">
@@ -436,7 +480,7 @@
             <button type="button" data-role="0" aria-selected="true"><b>100+</b><span>Database labs</span></button>
             <button type="button" data-role="1" aria-selected="false"><b>100+</b><span>Architecture labs</span></button>
             <button type="button" data-role="2" aria-selected="false"><b>100+</b><span>Computing labs</span></button>
-            <button type="button" data-role="3" aria-selected="false"><b>1 week</b><span>Pharmacy assistant</span></button>
+            <button type="button" data-role="3" aria-selected="false"><b>Counter</b><span>Pharmacy assistant</span></button>
             <button type="button" data-role="4" aria-selected="false"><b>15</b><span>Students mentored</span></button>
             <button type="button" data-role="5" aria-selected="false"><b>1st</b><span>IBM hackathon</span></button>
             <button type="button" data-role="6" aria-selected="false"><b>4th</b><span>Project:Hack 20</span></button>
@@ -458,9 +502,9 @@
                 <p>University of Leicester. Weekly labs for 100+ first-year students, on data-driven tasks and clear write-ups.</p>
             </article>
             <article class="role">
-                <p class="meta">One week</p>
+                <p class="meta">Work experience</p>
                 <h3>Pharmacy assistant</h3>
-                <p>Work experience. Customer-facing work at the counter.</p>
+                <p>Spoke with customers at the counter and helped with what they came in for.</p>
             </article>
             <article class="role">
                 <p class="meta">2024 – 2026</p>
@@ -484,15 +528,15 @@
         <p class="kicker">Certificates</p>
         <h2>Courses I finished.</h2>
         <ul class="certs">
-            <li><span class="when">20 Jun 2026</span><div><h3>AI for Data Analysis</h3><p>Google, on Coursera.</p></div><a href="https://coursera.org/verify/MI6PDC2R6C0F">Verify</a></li>
-            <li><span class="when">19 Jun 2026</span><div><h3>Develop Clustering Models with Azure ML Designer</h3><p>Microsoft, on Coursera.</p></div><a href="https://coursera.org/verify/IV6QSKTN8OX7">Verify</a></li>
-            <li><span class="when">19 Jun 2026</span><div><h3>Visualizing Data with Google Data Studio</h3><p>Google Cloud, on Coursera.</p></div><a href="https://coursera.org/verify/OXM1PJHZBIR1">Verify</a></li>
-            <li><span class="when">23 May 2024</span><div><h3>Introduction to Web Development with HTML, CSS, JavaScript</h3><p>IBM, on Coursera.</p></div><a href="https://coursera.org/verify/NFQHKDJ24JKC">Verify</a></li>
-            <li><span class="when">22 Apr 2024</span><div><h3>DevOps on AWS: Code, Build, and Test</h3><p>Amazon Web Services, on Coursera.</p></div><a href="https://coursera.org/verify/7BVEMLT8648Q">Verify</a></li>
-            <li><span class="when">4 May 2024</span><div><h3>Python Pandas for Data Manipulation</h3><p>Oxford Continuing Education. One day, online.</p></div></li>
-            <li><span class="when">29 Mar 2024</span><div><h3>Data Visualization with ChatGPT: Python for Dashboarding</h3><p>Coursera Project Network.</p></div><a href="https://coursera.org/verify/2AS4YVHK3EQQ">Verify</a></li>
-            <li><span class="when">5 Mar 2024</span><div><h3>IBM CIC Hackathon: Innovation Squad Member</h3><p>IBM. Intermediate.</p></div><a href="https://www.credly.com/go/Tl0y0r20">Verify</a></li>
-            <li><span class="when">9 Dec 2023</span><div><h3>Introduction to Networks and Cyber Security</h3><p>Oxford Continuing Education. One day, in Oxford.</p></div></li>
+            <li style="--i:0"><span class="when">20 Jun 2026</span><div><h3>AI for Data Analysis</h3><p>Google, on Coursera.</p></div><a href="https://coursera.org/verify/MI6PDC2R6C0F">Verify</a></li>
+            <li style="--i:1"><span class="when">19 Jun 2026</span><div><h3>Develop Clustering Models with Azure ML Designer</h3><p>Microsoft, on Coursera.</p></div><a href="https://coursera.org/verify/IV6QSKTN8OX7">Verify</a></li>
+            <li style="--i:2"><span class="when">19 Jun 2026</span><div><h3>Visualizing Data with Google Data Studio</h3><p>Google Cloud, on Coursera.</p></div><a href="https://coursera.org/verify/OXM1PJHZBIR1">Verify</a></li>
+            <li style="--i:3"><span class="when">23 May 2024</span><div><h3>Introduction to Web Development with HTML, CSS, JavaScript</h3><p>IBM, on Coursera.</p></div><a href="https://coursera.org/verify/NFQHKDJ24JKC">Verify</a></li>
+            <li style="--i:4"><span class="when">22 Apr 2024</span><div><h3>DevOps on AWS: Code, Build, and Test</h3><p>Amazon Web Services, on Coursera.</p></div><a href="https://coursera.org/verify/7BVEMLT8648Q">Verify</a></li>
+            <li style="--i:5"><span class="when">4 May 2024</span><div><h3>Python Pandas for Data Manipulation</h3><p>Oxford Continuing Education. One day, online.</p></div></li>
+            <li style="--i:6"><span class="when">29 Mar 2024</span><div><h3>Data Visualization with ChatGPT: Python for Dashboarding</h3><p>Coursera Project Network.</p></div><a href="https://coursera.org/verify/2AS4YVHK3EQQ">Verify</a></li>
+            <li style="--i:7"><span class="when">5 Mar 2024</span><div><h3>IBM CIC Hackathon: Innovation Squad Member</h3><p>IBM. Intermediate.</p></div><a href="https://www.credly.com/go/Tl0y0r20">Verify</a></li>
+            <li style="--i:8"><span class="when">9 Dec 2023</span><div><h3>Introduction to Networks and Cyber Security</h3><p>Oxford Continuing Education. One day, in Oxford.</p></div></li>
         </ul>
     </section>
 
@@ -507,6 +551,6 @@
         </p>
     </section>
 </main>
-<script src="app.js?v=18"></script>
+<script src="app.js?v=19"></script>
 </body>
 </html>

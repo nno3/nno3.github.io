@@ -297,6 +297,19 @@
     });
 
     var contact = document.getElementById("contact");
+    document.querySelectorAll(".tilt").forEach(function (card) {
+        if (reduce) return;
+        card.addEventListener("pointermove", function (e) {
+            var rect = card.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width - 0.5;
+            var y = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = "rotateY(" + (x * 7) + "deg) rotateX(" + (-y * 6) + "deg) translateY(-6px)";
+        });
+        card.addEventListener("pointerleave", function () {
+            card.style.transform = "";
+        });
+    });
+
     if (contact && fine) {
         contact.addEventListener("pointermove", function (e) {
             var rect = contact.getBoundingClientRect();

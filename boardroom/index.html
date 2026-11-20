@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boardroom · Noreen Alnageeb</title>
+    <meta name="description" content="Four agents take a business idea in turn. The CEO writes one plan. This public copy runs the scripted handoff.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1f1c;
+            --muted: #5c6b63;
+            --paper: #f3efe6;
+            --panel: #fffcf7;
+            --line: #d9d2c5;
+            --accent: #0f766e;
+            --accent-deep: #115e59;
+            --shadow: 0 18px 50px rgba(26, 31, 28, 0.08);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--ink);
+            font: 17px/1.55 "Source Sans 3", sans-serif;
+            background:
+                radial-gradient(900px 420px at 8% -10%, rgba(15, 118, 110, 0.16), transparent 60%),
+                radial-gradient(700px 380px at 100% 0%, rgba(180, 83, 9, 0.12), transparent 55%),
+                linear-gradient(180deg, #efe8da 0%, var(--paper) 42%, #ebe4d6 100%);
+        }
+        .page { width: min(1100px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 64px; }
+        a { color: var(--accent-deep); }
+        .top { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 22px; }
+        .top a { color: var(--ink); font-weight: 700; text-decoration: none; }
+        .brand { margin: 0 0 8px; font-family: Fraunces, Georgia, serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-deep); }
+        h1 { margin: 0; font-family: Fraunces, Georgia, serif; font-size: clamp(36px, 6vw, 58px); line-height: 1.02; letter-spacing: -0.03em; max-width: 14ch; }
+        .lede { max-width: 42rem; color: var(--muted); font-size: 18px; }
+        .pill { display: inline-block; margin-top: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(254, 243, 199, 0.8); color: #9a3412; font-size: 14px; font-weight: 700; }
+        .roster { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 22px 0; }
+        .agent {
+            display: flex; gap: 10px; align-items: flex-start;
+            background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+            padding: 14px; box-shadow: var(--shadow); transition: transform .25s ease, border-color .25s ease;
+        }
+        .agent h2 { margin: 0; font-family: Fraunces, Georgia, serif; font-size: 18px; }
+        .agent p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+        .dot { width: 10px; height: 10px; margin-top: 6px; border-radius: 50%; background: var(--c); flex: none; }
+        .agent.on { transform: translateY(-4px); border-color: var(--c); animation: pulse 1.2s ease-in-out infinite; }
+        .agent.done { border-color: var(--c); }
+        @keyframes pulse { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--c) 18%, transparent); } }
+        form {
+            background: var(--panel); border: 1px solid var(--line); border-radius: 20px;
+            padding: 18px; box-shadow: var(--shadow);
+        }
+        label { display: block; font-weight: 700; margin-bottom: 8px; }
+        textarea {
+            width: 100%; min-height: 120px; resize: vertical; border: 1px solid var(--line);
+            border-radius: 12px; padding: 12px 14px; font: inherit; background: #fffefb; color: var(--ink);
+        }
+        .row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; margin-top: 12px; }
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        button { font: inherit; cursor: pointer; }
+        .chip, .ghost {
+            border: 1px solid var(--line); background: transparent; color: var(--ink);
+            border-radius: 999px; padding: 8px 12px; font-weight: 700;
+        }
+        .go { border: 0; background: var(--accent); color: #f8fffc; border-radius: 999px; padding: 10px 16px; font-weight: 700; }
+        .go:disabled, .chip:disabled { opacity: 0.55; cursor: not-allowed; }
+        .workspace { display: grid; grid-template-columns: 240px 1fr; gap: 12px; margin-top: 16px; }
+        .log, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+        .log h2, .panel h2 { font-family: Fraunces, Georgia, serif; font-size: 22px; margin: 0 0 8px; }
+        .log button {
+            display: block; width: 100%; text-align: left; border: 0; border-left: 3px solid var(--c, #ccc);
+            background: transparent; padding: 8px 10px; margin: 4px 0; border-radius: 8px;
+        }
+        .log button strong { display: block; }
+        .log button span { color: var(--muted); font-size: 13px; }
+        .log button.active { background: #f6f1e6; }
+        .md h3, .md h4 { font-family: Fraunces, Georgia, serif; margin: 14px 0 6px; }
+        .md p, .md li { color: #24302b; }
+        .md ul, .md ol { margin: 6px 0 10px; padding-left: 1.2rem; }
+        .typing { color: var(--muted); font-weight: 700; }
+        .foot { margin-top: 18px; color: var(--muted); }
+        @media (max-width: 800px) {
+            .roster, .workspace { grid-template-columns: 1fr 1fr; }
+            .workspace { grid-template-columns: 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .agent.on { animation: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="top">
+        <a href="https://nno3.github.io/#work">Noreen Alnageeb</a>
+        <a href="https://github.com/nno3/boardroom">Source</a>
+    </div>
+    <p class="brand">Boardroom</p>
+    <h1>Four agents, one plan.</h1>
+    <p class="lede">Describe an idea. The CEO, marketing, finance, and engineering each see the notes so far. Then the CEO writes one plan. This public copy runs that handoff as a scripted demo, the same path the app uses when it has no key.</p>
+    <p class="pill">Demo board</p>
+
+    <section class="roster" aria-label="Advisory board">
+        <article class="agent" data-id="ceo" style="--c:#0f766e"><i class="dot"></i><div><h2>CEO</h2><p>Vision, priorities, risks</p></div></article>
+        <article class="agent" data-id="marketing" style="--c:#b45309"><i class="dot"></i><div><h2>Marketing</h2><p>Who it is for, and how you reach them</p></div></article>
+        <article class="agent" data-id="finance" style="--c:#1d4ed8"><i class="dot"></i><div><h2>Finance</h2><p>Price, costs, runway</p></div></article>
+        <article class="agent" data-id="engineer" style="--c:#7c3aed"><i class="dot"></i><div><h2>Engineering</h2><p>MVP, stack, roadmap</p></div></article>
+    </section>
+
+    <form id="form">
+        <label for="idea">Your business idea</label>
+        <textarea id="idea" required minlength="20" placeholder="Who is it for, what problem do you solve, and how might you make money?"></textarea>
+        <div class="row">
+            <div class="chips">
+                <button type="button" class="chip" data-example="An AI-powered meal planner for busy parents that builds weekly grocery lists from what is already in the fridge, cuts food waste, and syncs with local supermarket delivery.">Meal planner</button>
+                <button type="button" class="chip" data-example="A platform that helps small clinics manage patient reminders and follow-ups without replacing their existing records system.">Clinic reminders</button>
+                <button type="button" class="chip" data-example="A marketplace connecting homeowners with vetted local handypeople for same-week small jobs, with upfront pricing and photo-verified completion.">Home services</button>
+            </div>
+            <button class="go" id="go" type="submit">Convene the board</button>
+        </div>
+    </form>
+
+    <div class="workspace" id="workspace" hidden>
+        <aside class="log">
+            <h2>The handoff</h2>
+            <div id="log"></div>
+        </aside>
+        <article class="panel">
+            <h2 id="panel-title">Waiting</h2>
+            <div class="md" id="panel"></div>
+        </article>
+    </div>
+    <p class="foot">Order: CEO, then marketing, finance, and engineering, then the CEO again for the plan.</p>
+</div>
+<script>
+(function () {
+    var order = [
+        { id: "ceo", name: "CEO", title: "Vision and risks" },
+        { id: "marketing", name: "Marketing", title: "Who it is for" },
+        { id: "finance", name: "Finance", title: "Price and runway" },
+        { id: "engineer", name: "Engineering", title: "What to build first" },
+        { id: "synthesis", name: "CEO", title: "The plan" }
+    ];
+    var ideaEl = document.getElementById("idea");
+    var form = document.getElementById("form");
+    var go = document.getElementById("go");
+    var workspace = document.getElementById("workspace");
+    var log = document.getElementById("log");
+    var panel = document.getElementById("panel");
+    var panelTitle = document.getElementById("panel-title");
+    var timers = [];
+    var running = false;
+
+    document.querySelectorAll("[data-example]").forEach(function (btn) {
+        btn.addEventListener("click", function () { ideaEl.value = btn.getAttribute("data-example"); });
+    });
+
+    function labelOf(idea) {
+        var text = idea.trim();
+        return text.length > 120 ? text.slice(0, 120) + "…" : text;
+    }
+    function section(id, idea) {
+        var label = labelOf(idea);
+        if (id === "ceo") return "## Mission and vision\nBuild a focused company around **" + label + "**.\n\n## Value proposition\nHelp those customers reach a concrete outcome with less friction than what they use now.\n\n## First year\n1. Talk to 10–20 people who already feel the pain\n2. Ship a narrow first version and watch whether they come back\n3. Find one way of reaching them that you can repeat\n\n## Risks\n1. **Wrong customer** — interview every week\n2. **Too much scope** — freeze the first version\n3. **A channel that does not work** — test two before spending more";
+        if (id === "marketing") return "## Who it is for\nPeople who feel the pain behind “" + label + "” often enough that they already spend time or money on a workaround.\n\n## How you say it\n**Headline:** Get to the outcome without the usual friction.\n\n## First six months\n- Months 1–2: you write to people directly\n- Months 3–4: short notes on the problem, and a reason to tell a friend\n- Months 5–6: one paid channel, only after the free ones show a signal";
+        if (id === "finance") return "## How it might charge\nA subscription, or a free start and a paid tier, so the forecast is simple.\n\n## A pricing guess\nThese are estimates, not a quote: a low tier for one person, and a higher tier for heavier use.\n\n## What to watch\n- Cost to win a customer, and what they pay over time\n- Aim for the lifetime value to be at least three times the cost to win them\n- Keep 6–12 months of room to learn before raising money";
+        if (id === "engineer") return "## Build first\n- An account and the one job the product exists to do\n- Saved data, and a simple view of who comes back\n\n## A practical stack\nReact, Node, and PostgreSQL. Fast to change, and easy to hire for later.\n\n## Six weeks\n- Weeks 1–2: accounts and the core records\n- Weeks 3–4: the main path a person takes\n- Weeks 5–6: a small beta";
+        return "# Business plan\n\n## Summary\nValidate **" + label + "** with a narrow first version, direct outreach, and a simple way to charge.\n\n## The first 90 days\n1. Freeze what the first version includes\n2. Sit with early users and see if they come back\n3. Publish one way of reaching them\n4. Revisit the price after the first people pay\n\n## Next\nConfirm who it is for this week, agree the must-haves, and review activation every week.";
+    }
+    function escapeHtml(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    function markdown(md) {
+        var lines = md.split("\n");
+        var html = [];
+        var list = false;
+        function close() { if (list) { html.push("</ul>"); list = false; } }
+        lines.forEach(function (raw) {
+            var line = raw.trim();
+            if (!line) { close(); return; }
+            var inline = escapeHtml(line).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+            if (line.startsWith("# ")) { close(); html.push("<h3>" + inline.slice(2) + "</h3>"); return; }
+            if (line.startsWith("## ")) { close(); html.push("<h4>" + inline.slice(3) + "</h4>"); return; }
+            if (line.startsWith("- ") || /^\d+\.\s/.test(line)) {
+                if (!list) { html.push("<ul>"); list = true; }
+                html.push("<li>" + inline.replace(/^(- |\d+\.\s)/, "") + "</li>");
+                return;
+            }
+            close();
+            html.push("<p>" + inline + "</p>");
+        });
+        close();
+        return html.join("");
+    }
+    function show(id, title, body) {
+        document.querySelectorAll(".agent").forEach(function (card) {
+            card.classList.toggle("on", card.getAttribute("data-id") === id);
+            card.classList.toggle("done", false);
+        });
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.innerHTML = "<strong>" + title + "</strong><span>" + (id === "synthesis" ? "Final" : "Notes") + "</span>";
+        btn.addEventListener("click", function () {
+            panelTitle.textContent = title;
+            panel.innerHTML = markdown(body);
+        });
+        log.appendChild(btn);
+        panelTitle.textContent = title;
+        panel.innerHTML = markdown(body);
+    }
+    function stop() {
+        timers.forEach(function (id) { clearTimeout(id); });
+        timers = [];
+        running = false;
+        go.disabled = false;
+        go.textContent = "Convene the board";
+        document.querySelectorAll(".agent").forEach(function (card) { card.classList.remove("on"); });
+    }
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (running) return;
+        var idea = ideaEl.value.trim();
+        if (idea.length < 20) return;
+        stop();
+        running = true;
+        go.disabled = true;
+        go.textContent = "The board is writing…";
+        log.textContent = "";
+        workspace.hidden = false;
+        panelTitle.textContent = "Starting with the CEO";
+        panel.innerHTML = "<p class='typing'>Each agent reads the idea and the notes so far.</p>";
+        order.forEach(function (step, i) {
+            timers.push(setTimeout(function () {
+                document.querySelectorAll(".agent").forEach(function (card) {
+                    var match = card.getAttribute("data-id") === step.id || (step.id === "synthesis" && card.getAttribute("data-id") === "ceo");
+                    card.classList.toggle("on", match);
+                    if (match) card.classList.add("done");
+                });
+                show(step.id, step.name + " — " + step.title, section(step.id, idea));
+                if (i === order.length - 1) {
+                    running = false;
+                    go.disabled = false;
+                    go.textContent = "Convene the board";
+                    document.querySelectorAll(".agent").forEach(function (card) { card.classList.remove("on"); });
+                }
+            }, 700 * (i + 1)));
+        });
+    });
+})();
+</script>
+</body>
+</html>
