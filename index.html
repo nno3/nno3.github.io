@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
 <nav>
@@ -18,6 +18,7 @@
         <a href="#education">Education</a>
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
+        <a href="#certificates">Certificates</a>
         <a class="nav-btn" href="#contact">Contact</a>
     </div>
 </nav>
@@ -30,10 +31,10 @@
 
     <section class="studio" id="studio" data-theme="software" aria-label="Four kinds of work">
         <div class="prompts" role="tablist" aria-label="Choose a kind of work">
-            <button type="button" role="tab" data-show="0" aria-selected="true">Two sites, one study <span aria-hidden="true">→</span></button>
-            <button type="button" role="tab" data-show="1" aria-selected="false">1.1 million records <span aria-hidden="true">→</span></button>
-            <button type="button" role="tab" data-show="2" aria-selected="false">Vessels in uneven light <span aria-hidden="true">→</span></button>
-            <button type="button" role="tab" data-show="3" aria-selected="false">Verify, then return <span aria-hidden="true">→</span></button>
+            <button type="button" role="tab" data-show="0" aria-selected="true">Software</button>
+            <button type="button" role="tab" data-show="1" aria-selected="false">Data</button>
+            <button type="button" role="tab" data-show="2" aria-selected="false">AI</button>
+            <button type="button" role="tab" data-show="3" aria-selected="false">Cyber</button>
         </div>
         <div class="orbit" id="orbit">
             <article class="scene" data-scene="0" data-slot="0">
@@ -172,7 +173,7 @@
                 <div class="demo" data-demo="6">
                     <p class="mini-k">Soft skills</p>
                     <div class="tiles">
-                        <div><strong>100+</strong><span>students in the database labs</span></div>
+                        <div><strong>100+</strong><span>students in each of the labs</span></div>
                         <div><strong>15</strong><span>first-years mentored</span></div>
                         <div><strong>Lead</strong><span>Skills Hive, the group build</span></div>
                     </div>
@@ -229,6 +230,7 @@
                 <a class="pmedia retina" style="--mat:#d9e6fb" href="retina.html" aria-label="Retinal vessel result"><span class="flag">0.67 IoU</span></a>
                 <div class="pbody">
                     <h3><a href="retina.html">Retinal vessels</a></h3>
+                    <p class="got">Reached vessel IoU 0.67, including on images it was not tuned on.</p>
                     <p class="did">Uneven light was hiding the vessels. Removing it lifted vessel IoU from 0.14 to 0.54. One fixed pipeline then reached 0.67, including on images it was not tuned on.</p>
                     <ul class="boxes"><li>Python</li><li>scikit-image</li><li>OpenCV</li><li>NumPy</li></ul>
                     <p class="links mini"><a href="retina.html">Read the result</a></p>
@@ -238,6 +240,7 @@
                 <a class="pmedia fit" style="--mat:#dcecc8" href="https://nno3.github.io/street-crime/"><span class="flag">MAE 3.47</span><img src="images/crime.png" alt="Bar chart of London areas with the most street incidents in 2023."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/street-crime/">Street crime, 2023</a></h3>
+                    <p class="got">The forest was closer than the linear model: MAE 3.47 against 4.93.</p>
                     <p class="did">Cleaned about 1.1 million Metropolitan Police records and compared two models. The forest reached MAE 3.47 and R² 0.93, against 4.93 and 0.92 for linear regression, then grouped areas into five profiles.</p>
                     <ul class="boxes"><li>Python</li><li>pandas</li><li>scikit-learn</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/street-crime/">Live</a><a class="ghost" href="https://github.com/nno3/street-crime">Code</a></p>
@@ -247,6 +250,7 @@
                 <a class="pmedia fit" style="--mat:#d9e4f5" href="https://nno3.github.io/disease-spread/"><span class="flag">13% lower</span><img src="images/disease.png" alt="Disease spread dashboard for scenario 245."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/disease-spread/">Disease spread</a></h3>
+                    <p class="got">The second scenario’s predicted total was about 13% lower.</p>
                     <p class="did">Split a simulated outbreak into severity, agreement across four runs, and a second scenario. That scenario’s predicted total was about 13% lower.</p>
                     <ul class="boxes"><li>Power BI</li><li>Maps</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/disease-spread/">Live</a><a class="ghost" href="https://github.com/nno3/disease-spread">Code</a></p>
@@ -256,15 +260,27 @@
                 <a class="pmedia" style="--mat:#f3ead8" href="https://neuroease-dashboard.onrender.com/" aria-label="NeuroEase"><span class="flag">Two sites</span><span class="paper" aria-hidden="true"><b>76.4</b><b>78.7</b><small>caregiver · patient</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://neuroease-dashboard.onrender.com/">NeuroEase</a></h3>
-                    <p class="did">Built alone, with a site for the caregiver and a site for the patient. A study with 25 people scored 76.4 and 78.7, and the written comments changed the interface.</p>
+                    <p class="got">A study of 25 people scored 76.4 and 78.7, and the comments changed the interface.</p>
+                    <p class="did">Built alone, with a site for the caregiver and a site for the patient.</p>
                     <ul class="boxes"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul>
                     <p class="links mini"><a href="https://neuroease-dashboard.onrender.com/">Caregiver site</a><a class="ghost" href="https://neuroease-patient.onrender.com/">Patient site</a></p>
+                </div>
+            </article>
+            <article class="pcard" data-kind="ai">
+                <a class="pmedia" style="--mat:#e7f4f1" href="https://github.com/nno3/boardroom" aria-label="Boardroom"><span class="flag">4 agents</span><span class="paper" aria-hidden="true"><b>Plan</b><small>CEO, marketing, finance, engineering</small></span></a>
+                <div class="pbody">
+                    <h3><a href="https://github.com/nno3/boardroom">Boardroom</a></h3>
+                    <p class="got">Four agents hand the idea along, and the CEO writes one business plan.</p>
+                    <p class="did">A founder describes an idea. The CEO, marketing, finance, and engineering each see the notes so far. Without a key, the same handoff still runs as a scripted demo.</p>
+                    <ul class="boxes"><li>React</li><li>Node.js</li><li>Express</li></ul>
+                    <p class="links mini"><a href="https://github.com/nno3/boardroom">Code</a></p>
                 </div>
             </article>
             <article class="pcard" data-kind="site">
                 <a class="pmedia" style="--mat:#d5ead4" href="https://nno3.github.io/BrightonGreen/"><span class="flag">WCAG AA</span><img src="images/greenbrighton.png" alt="GreenBrighton homepage."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/BrightonGreen/">GreenBrighton</a></h3>
+                    <p class="got">Six interviews set the content, and the site meets WCAG 2.1 AA.</p>
                     <p class="did">Six interviews decided what people needed to know. The site explains eco-friendly places in Brighton and is built to WCAG 2.1 AA.</p>
                     <ul class="boxes"><li>D3.js</li><li>JavaScript</li><li>Accessibility</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/BrightonGreen/">Live</a><a class="ghost" href="https://github.com/nno3/BrightonGreen">Code</a></p>
@@ -274,6 +290,7 @@
                 <a class="pmedia fit" style="--mat:#e4dff5" href="https://nno3.github.io/network-security/"><span class="flag">4 captures</span><img src="images/network.png" alt="Network security page on the TCP tab."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/network-security/">Network security</a></h3>
+                    <p class="got">Each capture shows a normal protocol, then the weakness in the packets.</p>
                     <p class="did">Four teaching captures. Each one is a normal protocol, then the weakness in the packets. Pair work with Muhammad Abdullah Malik.</p>
                     <ul class="boxes"><li>Wireshark</li><li>TCP</li><li>TLS</li><li>DNS</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/network-security/">Live</a><a class="ghost" href="https://github.com/nno3/network-security">Code</a></p>
@@ -283,6 +300,7 @@
                 <a class="pmedia" style="--mat:#f6dfe8" href="https://nno3.github.io/file-recovery/" aria-label="File recovery"><span class="flag">Verified</span><span class="paper" aria-hidden="true"><b>Check</b><small>then the file is returned</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/file-recovery/">File recovery</a></h3>
+                    <p class="got">The sample file is returned only after the server can verify who is asking.</p>
                     <p class="did">One sample file is returned only after the server can verify who is asking. Pair work with Muhammad Abdullah Malik.</p>
                     <ul class="boxes"><li>Java</li><li>Encryption</li><li>Signatures</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/file-recovery/">Live</a><a class="ghost" href="https://github.com/nno3/file-recovery">Code</a></p>
@@ -292,6 +310,7 @@
                 <a class="pmedia" style="--mat:#f3efc0" href="https://nno3.github.io/skills-hive/" aria-label="Skills Hive"><span class="flag">I led it</span><span class="paper" aria-hidden="true"><b>4</b><small>dashboard, course, game, chatbot</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/skills-hive/">Skills Hive</a></h3>
+                    <p class="got">I led the group, and the dashboard, course page, game, and chatbot shipped.</p>
                     <p class="did">Led the group. Shipped the dashboard, the course page, the game, and the chatbot.</p>
                     <ul class="boxes"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/skills-hive/">Live</a><a class="ghost" href="https://github.com/nno3/skills-hive">Code</a></p>
@@ -301,6 +320,7 @@
                 <a class="pmedia fit" style="--mat:#e7eef8" href="https://nno3.github.io/clinic-api/"><img src="images/clinic.png" alt="Clinic page with tabs."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/clinic-api/">Clinic</a></h3>
+                    <p class="got">Doctors, patients, appointments, and records, in one shared API.</p>
                     <p class="did">Doctors, patients, appointments, and records, shared equally with Ajan Mudey and Aisha Tasneem Muhammad.</p>
                     <ul class="boxes"><li>Java</li><li>Spring Boot</li><li>REST</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/clinic-api/">Live</a><a class="ghost" href="https://github.com/nno3/clinic-api">Code</a></p>
@@ -310,6 +330,7 @@
                 <a class="pmedia fit" style="--mat:#e5f0e4" href="https://nno3.github.io/course-manager/"><img src="images/course.png" alt="Course manager showing two courses."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/course-manager/">Course manager</a></h3>
+                    <p class="got">The same enrolment screens run in the browser.</p>
                     <p class="did">Courses and the students enrolled on them, with the same screens in the browser. A trio project.</p>
                     <ul class="boxes"><li>Android</li><li>Java</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/course-manager/">Live</a><a class="ghost" href="https://github.com/nno3/course-manager">Code</a></p>
@@ -319,6 +340,7 @@
                 <a class="pmedia" style="--mat:#fde7c7" href="https://nno3.github.io/construction-thermometer/"><span class="flag">4th place</span><img src="images/thermometer.png" alt="Construction thermometer showing Residential at 20 degrees."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/construction-thermometer/">Construction thermometer</a></h3>
+                    <p class="got">Fourth place at Project:Hack 20, built alone.</p>
                     <p class="did">Seven construction sectors, read from public headlines. Built alone. Fourth place at Project:Hack 20.</p>
                     <ul class="boxes"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/construction-thermometer/">Live</a><a class="ghost" href="https://github.com/nno3/construction-thermometer">Code</a></p>
@@ -328,6 +350,7 @@
                 <a class="pmedia" style="--mat:#d7ebe3" href="https://nno3.github.io/co2-emissions/" aria-label="CO₂ emissions"><span class="paper" aria-hidden="true"><b>2002</b><small>emissions map, and Japan</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/co2-emissions/">CO₂ emissions</a></h3>
+                    <p class="got">Mapped 2002 emissions, and set Japan’s population against its emissions.</p>
                     <p class="did">A 2002 emissions map, and Japan’s population against emissions. With Muhammad Abdullah Malik.</p>
                     <ul class="boxes"><li>D3.js</li><li>Maps</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/co2-emissions/">Live</a><a class="ghost" href="https://github.com/nno3/co2-emissions">Code</a></p>
@@ -337,6 +360,7 @@
                 <a class="pmedia" style="--mat:#e6e9f8" href="https://nno3.github.io/university-database/" aria-label="University database"><span class="paper" aria-hidden="true"><b>SQL</b><small>departments, staff, students, courses</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/university-database/">University database</a></h3>
+                    <p class="got">One schema for departments, staff, students, and courses.</p>
                     <p class="did">Departments, staff, students, and courses. With Ajan Mudey and Aisha Tasneem Muhammad.</p>
                     <ul class="boxes"><li>SQL</li><li>MySQL</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/university-database/">Live</a><a class="ghost" href="https://github.com/nno3/university-database">Code</a></p>
@@ -346,6 +370,7 @@
                 <a class="pmedia" style="--mat:#f3ece3" href="https://nno3.github.io/project-allocation/" aria-label="Project allocation"><span class="paper" aria-hidden="true"><b>C++</b><small>the same steps, in the browser</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/project-allocation/">Project allocation</a></h3>
+                    <p class="got">The page follows the same allocation steps as the C++ program.</p>
                     <p class="did">Change the choices, then allocate, using the same steps as the C++ program. With Ayan Muday.</p>
                     <ul class="boxes"><li>C++</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/project-allocation/">Live</a><a class="ghost" href="https://github.com/nno3/project-allocation">Code</a></p>
@@ -355,6 +380,7 @@
                 <a class="pmedia" style="--mat:#e4eaf6" href="https://nno3.github.io/face-detector/" aria-label="Face detector"><span class="paper" aria-hidden="true"><b>Cascade</b><small>a photo, or the webcam</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/face-detector/">Face detector</a></h3>
+                    <p class="got">The same frontal-face cascade works on a photo or the webcam.</p>
                     <p class="did">The same frontal-face cascade on a photo or the webcam.</p>
                     <ul class="boxes"><li>C++</li><li>OpenCV</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/face-detector/">Live</a><a class="ghost" href="https://github.com/nno3/face-detector">Code</a></p>
@@ -364,6 +390,7 @@
                 <a class="pmedia" style="--mat:#f3ece3" href="https://nno3.github.io/file-system/" aria-label="File system"><span class="paper" aria-hidden="true"><b>mkdir</b><small>folders kept in memory</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/file-system/">File system</a></h3>
+                    <p class="got">The page runs the same in-memory folder commands.</p>
                     <p class="did">Folders and files kept in memory. The page runs the same commands.</p>
                     <ul class="boxes"><li>C++</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/file-system/">Live</a><a class="ghost" href="https://github.com/nno3/file-system">Code</a></p>
@@ -373,6 +400,7 @@
                 <a class="pmedia" style="--mat:#d9e2ea" href="https://nno3.github.io/snake/"><img src="images/snake.png" alt="Snake on a dark grid."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/snake/">Snake</a></h3>
+                    <p class="got">The page plays the same game.</p>
                     <p class="did">A desktop game. The page plays the same one.</p>
                     <ul class="boxes"><li>Java</li><li>Swing</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/snake/">Live</a><a class="ghost" href="https://github.com/nno3/snake">Code</a></p>
@@ -382,6 +410,7 @@
                 <a class="pmedia fit" style="--mat:#f6e3c8" href="https://nno3.github.io/saudi-interactive-map/"><img src="images/saudi.png" alt="Map of Saudi Arabia."></a>
                 <div class="pbody">
                     <h3><a href="https://nno3.github.io/saudi-interactive-map/">Saudi Arabia</a></h3>
+                    <p class="got">Each city can be marked visited, lived in, or stopped by.</p>
                     <p class="did">Mark each city as visited, lived in, or stopped by.</p>
                     <ul class="boxes"><li>JavaScript</li><li>Maps</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/saudi-interactive-map/">Live</a><a class="ghost" href="https://github.com/nno3/saudi-interactive-map">Code</a></p>
@@ -391,6 +420,7 @@
                 <a class="pmedia" style="--mat:#efe6da" href="https://github.com/nno3/techcon" aria-label="TechCon"><span class="paper" aria-hidden="true"><b>3 days</b><small>schedule, speakers, registration</small></span></a>
                 <div class="pbody">
                     <h3><a href="https://github.com/nno3/techcon">TechCon</a></h3>
+                    <p class="got">I built the group’s site: registration, a three-day schedule, and speakers.</p>
                     <p class="did">A conference site: home, registration, a three-day schedule, speakers, and contact. I built it for the group.</p>
                     <ul class="boxes"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
                     <p class="links mini"><a href="https://github.com/nno3/techcon">Code</a></p>
@@ -401,14 +431,15 @@
 
     <section id="experience" class="reveal">
         <p class="kicker">Experience</p>
-        <h2>Teaching and awards.</h2>
+        <h2>Teaching, work, and awards.</h2>
         <div class="deck" role="tablist" aria-label="Roles and awards">
             <button type="button" data-role="0" aria-selected="true"><b>100+</b><span>Database labs</span></button>
-            <button type="button" data-role="1" aria-selected="false"><b>20–40</b><span>Architecture labs</span></button>
-            <button type="button" data-role="2" aria-selected="false"><b>Labs</b><span>Financial computing</span></button>
-            <button type="button" data-role="3" aria-selected="false"><b>15</b><span>Students mentored</span></button>
-            <button type="button" data-role="4" aria-selected="false"><b>1st</b><span>IBM hackathon</span></button>
-            <button type="button" data-role="5" aria-selected="false"><b>4th</b><span>Project:Hack 20</span></button>
+            <button type="button" data-role="1" aria-selected="false"><b>100+</b><span>Architecture labs</span></button>
+            <button type="button" data-role="2" aria-selected="false"><b>100+</b><span>Computing labs</span></button>
+            <button type="button" data-role="3" aria-selected="false"><b>1 week</b><span>Pharmacy assistant</span></button>
+            <button type="button" data-role="4" aria-selected="false"><b>15</b><span>Students mentored</span></button>
+            <button type="button" data-role="5" aria-selected="false"><b>1st</b><span>IBM hackathon</span></button>
+            <button type="button" data-role="6" aria-selected="false"><b>4th</b><span>Project:Hack 20</span></button>
         </div>
         <div class="roles">
             <article class="role is-on">
@@ -419,12 +450,17 @@
             <article class="role">
                 <p class="meta">Oct–Dec 2024 · Oct–Dec 2025</p>
                 <h3>Computer architecture lab assistant</h3>
-                <p>Two terms at Leicester, about 20–40 students a week, taking system concepts apart into clear steps.</p>
+                <p>Two terms at Leicester. Weekly labs for 100+ students, taking system concepts apart into clear steps.</p>
             </article>
             <article class="role">
                 <p class="meta">Jan 2025 – Mar 2025</p>
                 <h3>Business and financial computing lab assistant</h3>
-                <p>First-year labs at Leicester, on data-driven tasks and clear write-ups.</p>
+                <p>University of Leicester. Weekly labs for 100+ first-year students, on data-driven tasks and clear write-ups.</p>
+            </article>
+            <article class="role">
+                <p class="meta">One week</p>
+                <h3>Pharmacy assistant</h3>
+                <p>Work experience. Customer-facing work at the counter.</p>
             </article>
             <article class="role">
                 <p class="meta">2024 – 2026</p>
@@ -432,9 +468,9 @@
                 <p>Voluntary. Fifteen first-year students, across two years, on study planning and settling into Leicester.</p>
             </article>
             <article class="role">
-                <p class="meta">Award</p>
-                <h3>IBM CIC Computer Science Society hackathon</h3>
-                <p>First place, in a team, on a prototype for international students.</p>
+                <p class="meta">March 2024</p>
+                <h3>IBM CIC UK and University of Leicester hackathon</h3>
+                <p>First place, in a team, on a prototype for international students. IBM also issued an Innovation Squad Member badge, Intermediate, on 5 March 2024.</p>
             </article>
             <article class="role">
                 <p class="meta">Award</p>
@@ -442,6 +478,22 @@
                 <p>Fourth place for the construction dashboard, built alone.</p>
             </article>
         </div>
+    </section>
+
+    <section id="certificates" class="reveal">
+        <p class="kicker">Certificates</p>
+        <h2>Courses I finished.</h2>
+        <ul class="certs">
+            <li><span class="when">20 Jun 2026</span><div><h3>AI for Data Analysis</h3><p>Google, on Coursera.</p></div><a href="https://coursera.org/verify/MI6PDC2R6C0F">Verify</a></li>
+            <li><span class="when">19 Jun 2026</span><div><h3>Develop Clustering Models with Azure ML Designer</h3><p>Microsoft, on Coursera.</p></div><a href="https://coursera.org/verify/IV6QSKTN8OX7">Verify</a></li>
+            <li><span class="when">19 Jun 2026</span><div><h3>Visualizing Data with Google Data Studio</h3><p>Google Cloud, on Coursera.</p></div><a href="https://coursera.org/verify/OXM1PJHZBIR1">Verify</a></li>
+            <li><span class="when">23 May 2024</span><div><h3>Introduction to Web Development with HTML, CSS, JavaScript</h3><p>IBM, on Coursera.</p></div><a href="https://coursera.org/verify/NFQHKDJ24JKC">Verify</a></li>
+            <li><span class="when">22 Apr 2024</span><div><h3>DevOps on AWS: Code, Build, and Test</h3><p>Amazon Web Services, on Coursera.</p></div><a href="https://coursera.org/verify/7BVEMLT8648Q">Verify</a></li>
+            <li><span class="when">4 May 2024</span><div><h3>Python Pandas for Data Manipulation</h3><p>Oxford Continuing Education. One day, online.</p></div></li>
+            <li><span class="when">29 Mar 2024</span><div><h3>Data Visualization with ChatGPT: Python for Dashboarding</h3><p>Coursera Project Network.</p></div><a href="https://coursera.org/verify/2AS4YVHK3EQQ">Verify</a></li>
+            <li><span class="when">5 Mar 2024</span><div><h3>IBM CIC Hackathon: Innovation Squad Member</h3><p>IBM. Intermediate.</p></div><a href="https://www.credly.com/go/Tl0y0r20">Verify</a></li>
+            <li><span class="when">9 Dec 2023</span><div><h3>Introduction to Networks and Cyber Security</h3><p>Oxford Continuing Education. One day, in Oxford.</p></div></li>
+        </ul>
     </section>
 
     <section id="contact" class="contact reveal">
@@ -455,6 +507,6 @@
         </p>
     </section>
 </main>
-<script src="app.js?v=16"></script>
+<script src="app.js?v=18"></script>
 </body>
 </html>

@@ -522,7 +522,22 @@ html.js .stop.is-on .stamp { animation: stamp 0.55s cubic-bezier(0.2, 1.4, 0.3, 
 .pbody h3 { margin: 0; font-size: 20px; letter-spacing: -0.03em; }
 .pbody h3 a { color: inherit; text-decoration: none; }
 .pbody h3 a:hover { text-decoration: underline; }
-.pbody .did { margin: 8px 0 0; color: var(--muted); font-size: 14.5px; }
+.got { margin: 8px 0 0; color: var(--ink); font-weight: 600; font-size: 14.5px; }
+.pbody .did { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
+.certs { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+.certs li {
+    display: grid;
+    grid-template-columns: 8.2rem 1fr auto;
+    gap: 8px 14px;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    padding: 14px 16px;
+}
+.certs .when { color: #6d657c; font: 700 12px/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; }
+.certs h3 { margin: 0; font-size: 16px; letter-spacing: -0.02em; }
+.certs p { margin: 3px 0 0; color: var(--muted); font-size: 14px; }
+.certs a { font-weight: 700; font-size: 13px; color: var(--ink); }
 .boxes { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
 .boxes li {
     background: #fff;
@@ -621,6 +636,8 @@ html.js .role.is-on { display: block; animation: rise 0.4s ease; }
     .pane strong { font-size: 28px; }
     .rail-line { display: none; }
     .stop.is-on, .stop[aria-selected="true"], .stop:hover { transform: none; }
+    .certs li { grid-template-columns: 1fr auto; }
+    .certs .when { grid-column: 1 / -1; }
 }
 @media (min-width: 800px) {
     .bench { grid-template-columns: 1.05fr 0.95fr; }
