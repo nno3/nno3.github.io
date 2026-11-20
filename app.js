@@ -2,58 +2,94 @@
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.documentElement.classList.add("js");
 
-    var words = document.querySelectorAll(".roles span");
+    var shows = [
+        {
+            kicker: "Software",
+            title: "Two interfaces",
+            line: "NeuroEase has a site for the caregiver and a site for the patient. A study with 25 people scored 76.4 and 78.7.",
+            face: "app"
+        },
+        {
+            kicker: "Data",
+            title: "1.1 million records",
+            line: "Street crime, 2023. A random forest reached MAE 3.47 and R² 0.93, against 4.93 and 0.92 for linear regression.",
+            face: "chart"
+        },
+        {
+            kicker: "AI",
+            title: "A measured pipeline",
+            line: "Retinal vessels. Illumination removal lifted vessel IoU from 0.14 to 0.54. The final pipeline reached 0.67.",
+            face: "model"
+        },
+        {
+            kicker: "Cyber",
+            title: "Check, then return",
+            line: "Four packet captures, and a sample file returned only after the server can verify who is asking.",
+            face: "lock"
+        }
+    ];
     var index = 0;
-    if (!reduce && words.length > 1) {
-        window.setInterval(function () {
-            words[index].classList.remove("on");
-            index = (index + 1) % words.length;
-            words[index].classList.add("on");
-        }, 1700);
+    var timer = null;
+    var card = document.getElementById("stage-card");
+    var pills = document.querySelectorAll("[data-show]");
+
+    function paint(i) {
+        index = i;
+        var item = shows[i];
+        var prev = shows[(i + shows.length - 1) % shows.length];
+        var next = shows[(i + 1) % shows.length];
+        card.classList.remove("swap");
+        void card.offsetWidth;
+        card.classList.add("swap");
+        card.querySelector("[data-kicker]").textContent = item.kicker;
+        card.querySelector("[data-title]").textContent = item.title;
+        card.querySelector("[data-line]").textContent = item.line;
+        card.dataset.face = item.face;
+        document.querySelector(".wing.left").dataset.face = prev.face;
+        document.querySelector(".wing.right").dataset.face = next.face;
+        pills.forEach(function (pill, n) {
+            pill.setAttribute("aria-selected", n === i ? "true" : "false");
+        });
     }
 
-    var tabs = document.querySelectorAll("[data-tab]");
-    var panels = document.querySelectorAll("[data-panel]");
-    tabs.forEach(function (tab) {
-        tab.addEventListener("click", function () {
-            var name = tab.getAttribute("data-tab");
-            tabs.forEach(function (item) {
-                item.setAttribute("aria-selected", item === tab ? "true" : "false");
+    function start() {
+        if (reduce) return;
+        stop();
+        timer = window.setInterval(function () {
+            paint((index + 1) % shows.length);
+        }, 4200);
+    }
+    function stop() {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+    }
+
+    pills.forEach(function (pill, n) {
+        pill.addEventListener("click", function () {
+            paint(n);
+            start();
+        });
+    });
+    var stage = document.querySelector(".showcase");
+    if (stage) {
+        stage.addEventListener("mouseenter", stop);
+        stage.addEventListener("mouseleave", start);
+    }
+    paint(0);
+    start();
+
+    var filters = document.querySelectorAll("[data-filter]");
+    var cards = document.querySelectorAll(".pcard");
+    filters.forEach(function (filter) {
+        filter.addEventListener("click", function () {
+            var kind = filter.getAttribute("data-filter");
+            filters.forEach(function (item) {
+                item.setAttribute("aria-selected", item === filter ? "true" : "false");
             });
-            panels.forEach(function (panel) {
-                panel.hidden = panel.getAttribute("data-panel") !== name;
+            cards.forEach(function (cardEl) {
+                var show = kind === "all" || cardEl.getAttribute("data-kind") === kind;
+                cardEl.classList.toggle("hide", !show);
             });
         });
     });
-
-    var viewAll = document.getElementById("view-all");
-    if (viewAll) {
-        viewAll.addEventListener("click", function () {
-            document.getElementById("tab-all").click();
-            document.getElementById("work").scrollIntoView();
-        });
-    }
-
-    var scene = document.querySelector(".scene");
-    if (scene && !reduce && window.matchMedia("(pointer: fine)").matches) {
-        window.addEventListener("pointermove", function (event) {
-            var x = (event.clientX / window.innerWidth - 0.5) * 16;
-            var y = (event.clientY / window.innerHeight - 0.5) * 12;
-            scene.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
-        });
-    }
-
-    var items = document.querySelectorAll(".expert, .extra, .feature, .role");
-    if (reduce || !("IntersectionObserver" in window)) {
-        items.forEach(function (el) { el.classList.add("in"); });
-        return;
-    }
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add("in");
-            observer.unobserve(entry.target);
-        });
-    }, { threshold: 0.12 });
-    items.forEach(function (el) { observer.observe(el); });
 })();

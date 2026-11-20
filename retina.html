@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retinal vessels · Noreen Alnageeb</title>
+    <meta name="description" content="Classical retinal vessel segmentation on 15 high-resolution fundus images. Vessel IoU 0.67 and mIoU 0.81.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=14">
+</head>
+<body>
+<nav>
+    <a class="mark" href="index.html">Noreen</a>
+    <div class="nav-links">
+        <a href="index.html#work">Work</a>
+        <a class="nav-btn" href="index.html#contact">Contact</a>
+    </div>
+</nav>
+<main class="sheet">
+    <p class="eyebrow">CSC8628 · Image processing · Newcastle</p>
+    <h1>Retinal vessels.</h1>
+    <p class="lede">A classical, non-learning segmentation of blood vessels in 15 healthy high-resolution fundus images. One fixed set of parameters. Tuned on five images and applied unchanged to the other ten.</p>
+
+    <div class="statrow">
+        <div><strong>0.67</strong><span>vessel IoU</span></div>
+        <div><strong>0.81</strong><span>mIoU</span></div>
+        <div><strong>0.80</strong><span>Dice</span></div>
+        <div><strong>0.67</strong><span>held-out IoU</span></div>
+    </div>
+
+    <h2>The problem</h2>
+    <p>Vessel contrast is low, illumination is uneven, and the optic disc and macula create edges that look like vessels. An empty prediction already scores about 0.90 accuracy, because vessels cover only about 9% of each image, so overlap (IoU) was the measure that decided each step.</p>
+
+    <h2>What changed the result</h2>
+    <p>Background normalisation did most of the work. Vessel IoU moved from 0.14 on the raw green channel to 0.54 once slow illumination was removed. CLAHE, a Frangi filter, and a top-hat fused with it (0.7 Frangi, 0.3 top-hat) then recovered thinner vessels. The held-out images scored 0.67, a little above the five images used for tuning (0.66).</p>
+
+    <ol class="bars" aria-label="Vessel IoU after each stage">
+        <li style="--w:21%"><span>Green channel</span><i></i><b>0.14</b></li>
+        <li style="--w:81%"><span>Illumination removed</span><i></i><b>0.54</b></li>
+        <li style="--w:97%"><span>Frangi</span><i></i><b>0.65</b></li>
+        <li style="--w:100%"><span>Final pipeline</span><i></i><b>0.67</b></li>
+    </ol>
+
+    <h2>What it still misses</h2>
+    <p>Wide vessels are found (sensitivity 0.90). Thin vessels, under 5 pixels, drop to 0.41. The weakest image is also the lowest contrast. Only healthy images were used.</p>
+    <p class="links"><a href="index.html#work">Back to the work</a></p>
+</main>
+</body>
+</html>
