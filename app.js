@@ -6,7 +6,7 @@
     var shows = [
         {
             theme: "software",
-            line: "Built alone. The caregiver and the patient each have their own site. A study with 25 people scored 76.4 and 78.7, and the written comments changed the interface.",
+            line: "Built alone. The caregiver and the patient each have their own site, with WebRTC calls and live messages. A study with 25 people scored 76.4 and 78.7, and the written comments changed the interface.",
             links: [
                 ["https://neuroease-dashboard.onrender.com/", "Caregiver site", false],
                 ["https://neuroease-patient.onrender.com/", "Patient site", true]
