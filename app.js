@@ -342,3 +342,139 @@
         showEdu(2);
     }
 })();
+
+(function () {
+    var root = document.getElementById("skills");
+    if (!root || !document.getElementById("sk-type")) return;
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function $(s) { return root.querySelector(s); }
+    function $all(s) { return root.querySelectorAll(s); }
+
+    function countUp(el) {
+        var end = +el.dataset.count;
+        var suf = el.dataset.suffix || "";
+        if (still) { el.textContent = end + suf; return; }
+        var t0 = performance.now();
+        function step(t) {
+            var p = Math.min((t - t0) / 1200, 1);
+            el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + (p === 1 ? suf : "");
+            if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+    if ("IntersectionObserver" in window) {
+        var revealer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                e.target.classList.add("in");
+                e.target.querySelectorAll("[data-count]").forEach(countUp);
+                revealer.unobserve(e.target);
+            });
+        }, { threshold: 0.2 });
+        $all(".tile").forEach(function (t) { revealer.observe(t); });
+    } else {
+        $all(".tile").forEach(function (t) {
+            t.classList.add("in");
+            t.querySelectorAll("[data-count]").forEach(countUp);
+        });
+    }
+    $all(".tile").forEach(function (t) {
+        t.addEventListener("pointermove", function (e) {
+            var r = t.getBoundingClientRect();
+            t.style.setProperty("--mx", (e.clientX - r.left) + "px");
+            t.style.setProperty("--my", (e.clientY - r.top) + "px");
+        });
+    });
+
+    var hellos = [
+        ["hello.py", 'print("Hello")'],
+        ["hello.js", 'console.log("Hello")'],
+        ["Hello.java", 'System.out.println("Hello");'],
+        ["hello.cpp", 'std::cout << "Hello";'],
+        ["hello.R", 'cat("Hello")'],
+        ["hello.sql", "SELECT 'Hello';"]
+    ];
+    var typeEl = $("#sk-type");
+    var outEl = $("#sk-out");
+    var fname = $("#sk-fname");
+    var langChips = $all("#sk-langs li");
+    var li = 0;
+    function showLang() {
+        var pair = hellos[li];
+        fname.textContent = pair[0];
+        outEl.classList.remove("show");
+        langChips.forEach(function (c, i) { c.classList.toggle("on", i === li); });
+        if (still) { typeEl.textContent = pair[1]; outEl.classList.add("show"); return; }
+        var n = 0;
+        typeEl.textContent = "";
+        var tick = setInterval(function () {
+            n += 1;
+            typeEl.textContent = pair[1].slice(0, n);
+            if (n >= pair[1].length) {
+                clearInterval(tick);
+                setTimeout(function () { outEl.classList.add("show"); }, 250);
+                setTimeout(function () { li = (li + 1) % hellos.length; showLang(); }, 2200);
+            }
+        }, 45);
+    }
+    showLang();
+
+    var svg = $("#sk-scatter");
+    var cols = ["#7fa9e3", "#ec98bd", "#6fc39b"];
+    var ctr = [[70, 55], [215, 50], [150, 128]];
+    function rnd(a, b) { return a + Math.random() * (b - a); }
+    var dots = [];
+    for (var i = 0; i < 45; i++) {
+        var k = i % 3;
+        var a = rnd(0, 6.28);
+        var rad = rnd(4, 26);
+        dots.push({
+            k: k,
+            sx: rnd(14, 286),
+            sy: rnd(14, 156),
+            cx: ctr[k][0] + Math.cos(a) * rad,
+            cy: ctr[k][1] + Math.sin(a) * rad * 0.8
+        });
+    }
+    svg.innerHTML = dots.map(function (d) {
+        return '<circle r="4.5" cx="0" cy="0" style="--f:' + cols[d.k] + ";transform:translate(" + d.sx.toFixed(1) + "px," + d.sy.toFixed(1) + 'px)"/>';
+    }).join("");
+    var circles = svg.querySelectorAll("circle");
+    var clustered = false;
+    function flip() {
+        clustered = !clustered;
+        svg.classList.toggle("k", clustered);
+        circles.forEach(function (c, idx) {
+            var d = dots[idx];
+            c.style.transform = "translate(" + (clustered ? d.cx : d.sx) + "px," + (clustered ? d.cy : d.sy) + "px)";
+        });
+    }
+    if (still) flip();
+    else { setTimeout(flip, 900); setInterval(flip, 3600); }
+
+    var protos = $all("#sk-proto li");
+    var pi = 0;
+    function lightProto() {
+        protos.forEach(function (p, idx) { p.classList.toggle("on", idx === pi); });
+        pi = (pi + 1) % protos.length;
+    }
+    lightProto();
+    if (!still) setInterval(lightProto, 1500);
+
+    var falls = $all("#sk-falls i");
+    var sprints = $all("#sk-sprints i");
+    var fi = 0;
+    var si = 0;
+    function planTick() {
+        falls.forEach(function (f, idx) { f.classList.toggle("on", idx <= fi); });
+        fi = (fi + 1) % (falls.length + 1);
+        sprints.forEach(function (s, idx) { s.classList.toggle("on", idx <= si); });
+        si = (si + 1) % (sprints.length + 1);
+    }
+    if (still) {
+        falls.forEach(function (f) { f.classList.add("on"); });
+        sprints.forEach(function (s) { s.classList.add("on"); });
+    } else {
+        setInterval(planTick, 700);
+    }
+})();

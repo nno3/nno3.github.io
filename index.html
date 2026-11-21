@@ -7,8 +7,8 @@
     <meta name="description" content="Noreen Alnageeb. Software, data, and AI. MSc Advanced Artificial Intelligence at Newcastle. First-class Software Engineering at Leicester.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=22">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Naskh+Arabic:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
 <nav>
@@ -24,7 +24,6 @@
 </nav>
 <main id="top">
     <header class="hero">
-        <p class="eyebrow">Newcastle · Leicester</p>
         <h1>Noreen Alnageeb.</h1>
         <p class="lede">First-class Software Engineering at Leicester, now an MSc in Advanced Artificial Intelligence at Newcastle. I build software, analyse data, and train models.</p>
     </header>
@@ -110,114 +109,118 @@
     </section>
 
     <section id="skills" class="reveal">
-        <p class="kicker">Skills</p>
-        <h2>What I use.</h2>
-        <p class="lede">Eight boards. The last one is how the work was planned.</p>
-        <div class="board">
-            <article class="dash sand">
-                <p class="mini-k">Programming</p>
+        <div class="sk-head">
+            <h2>What I use.</h2>
+            <p>Eight areas. The last one shows how the work was planned.</p>
+        </div>
+        <div class="bento">
+            <article class="tile s2 blue" style="--i:0">
+                <div class="tag"><i></i>Programming</div>
+                <h3>Six languages, one hello.</h3>
                 <div class="term" aria-hidden="true">
-                    <span>python</span><span>javascript</span><span>java</span><span>c++</span><span>r</span><span>sql</span>
+                    <div class="meta"><span id="sk-fname">hello.py</span><b><i></i><i></i><i></i></b></div>
+                    <div><span id="sk-type"></span><span class="caret"></span></div>
+                    <div class="out" id="sk-out">Hello</div>
                 </div>
-            </article>
-            <article class="dash ink">
-                <p class="mini-k">Languages</p>
-                <div class="langs">
-                    <p class="ar">العربية</p>
-                    <p>English</p>
-                </div>
-                <p class="foot">Both fluent.</p>
-            </article>
-            <article class="dash butter">
-                <p class="mini-k">Soft skills</p>
-                <div class="meters">
-                    <div><b>100+</b><span>students in each lab</span></div>
-                    <div><b>15</b><span>first-years mentored</span></div>
-                    <div><b>0.67</b><span>IoU, from 0.14</span></div>
-                </div>
-                <ul class="pills">
-                    <li>Teaching</li><li>Mentoring</li><li>Communication</li><li>Critical thinking</li><li>Group lead</li><li>Accessibility</li><li>Lab support</li><li>Clear write-ups</li>
+                <ul class="chips push" id="sk-langs">
+                    <li>Python</li><li>JavaScript</li><li>Java</li><li>C++</li><li>R</li><li>SQL</li>
                 </ul>
-                <p class="foot">An empty retinal guess is already about 0.90 accurate, so IoU decided each step.</p>
             </article>
-            <article class="dash mint data">
-                <p class="mini-k">Data</p>
-                <div class="clusters">
-                    <div>
-                        <h3>Tools</h3>
-                        <ul class="pills"><li>pandas</li><li>PostgreSQL</li><li>MySQL</li><li>Power BI</li><li>D3.js</li><li>Excel</li></ul>
-                    </div>
-                    <div>
-                        <h3>Prepare</h3>
-                        <ul class="pills"><li>ETL</li><li>Data cleansing</li><li>Data mining</li><li>Data transformation</li></ul>
-                    </div>
-                    <div>
-                        <h3>Read it</h3>
-                        <ul class="pills"><li>Data visualization</li><li>Data presentation</li><li>Statistical analysis</li><li>Data mart</li><li>Big data</li><li>Analysis</li><li>Analytics</li></ul>
+            <article class="tile pink" style="--i:1">
+                <div class="tag"><i></i>Languages</div>
+                <div class="hello" aria-hidden="true"><span lang="ar" dir="rtl">مرحبا</span><span>Hello</span></div>
+                <div class="push">
+                    <div class="lvl"><b>Arabic · العربية</b><span>Fluent</span></div>
+                    <div class="lvl"><b>English</b><span>Fluent</span></div>
+                </div>
+            </article>
+            <article class="tile peach" style="--i:2">
+                <div class="tag"><i></i>Soft skills</div>
+                <div class="nums">
+                    <div><b data-count="100" data-suffix="+">0</b><span>students in each lab</span></div>
+                    <div><b data-count="15">0</b><span>first-years mentored</span></div>
+                </div>
+                <ul class="chips push"><li>Teaching</li><li>Mentoring</li><li>Communication</li><li>Critical thinking</li><li>Time management</li><li>Group lead</li><li>Accessibility</li><li>Lab support</li><li>Clear write-ups</li></ul>
+            </article>
+            <article class="tile s2 mint" style="--i:3">
+                <div class="tag"><i></i>AI &amp; computer vision</div>
+                <h3>Models that find the pattern.</h3>
+                <div class="ai-wrap">
+                    <svg class="scatter" id="sk-scatter" viewBox="0 0 300 170" role="img" aria-label="Dots grouping into three clusters"></svg>
+                    <div class="iou">
+                        <b>0.67</b>
+                        <p>IoU on retinal vessel segmentation, up from 0.14. An empty guess already scores about 0.90 accuracy, so IoU was the honest measure.</p>
+                        <div class="meter"><i></i></div>
+                        <div class="meter-l"><span>0.14</span><span>0.67</span></div>
                     </div>
                 </div>
-                <p class="foot">IBM Data Analytics Foundations, finished 20 Nov 2026.</p>
+                <div class="sub">Libraries</div>
+                <ul class="chips"><li>scikit-learn</li><li>OpenCV</li><li>scikit-image</li><li>NumPy</li><li>SciPy</li><li>Matplotlib</li><li>Google Colab</li></ul>
+                <div class="sub">Methods</div>
+                <ul class="chips"><li>Regression</li><li>Random forests</li><li>Clustering</li><li>CLAHE</li><li>Otsu thresholding</li><li>Frangi vesselness</li><li>Top-hat and matched filters</li><li>Morphology</li></ul>
             </article>
-            <article class="dash ice">
-                <p class="mini-k">AI</p>
-                <ol class="pipe">
-                    <li>Regression</li>
-                    <li>Random forests</li>
-                    <li>Clustering</li>
-                </ol>
-                <ul class="pills"><li>scikit-learn</li><li>OpenCV</li><li>scikit-image</li></ul>
+            <article class="tile s2 lav" style="--i:4">
+                <div class="tag"><i></i>Data</div>
+                <h3>From messy rows to a clear story.</h3>
+                <div class="pipe">
+                    <div class="stage"><b>Raw</b><div class="raw" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+                    <div class="conn" aria-hidden="true"></div>
+                    <div class="stage"><b>Prepare</b><small>ETL · Cleansing · Transformation</small></div>
+                    <div class="conn b" aria-hidden="true"></div>
+                    <div class="stage"><b>Read it</b><div class="bars" aria-hidden="true"><i style="--h:40%"></i><i style="--h:75%"></i><i style="--h:55%"></i><i style="--h:95%"></i><i style="--h:68%"></i></div></div>
+                </div>
+                <div class="sub">Tools</div>
+                <ul class="chips"><li>pandas</li><li>PostgreSQL</li><li>MySQL</li><li>Power BI</li><li>D3.js</li><li>Excel</li></ul>
+                <div class="sub">Skills</div>
+                <ul class="chips"><li>Data mining</li><li>Data visualization</li><li>Data presentation</li><li>Statistical analysis</li><li>Data mart</li><li>Big data</li><li>Analysis</li><li>Analytics</li></ul>
+                <p class="note">IBM Data Analytics Foundations, finished 20 Nov 2026.</p>
             </article>
-            <article class="dash lilac softw">
-                <p class="mini-k">Software</p>
-                <ol class="stack">
-                    <li>React</li><li>Node.js</li><li>Socket.IO</li><li>PostgreSQL</li>
-                </ol>
-                <ul class="pills"><li>Git</li><li>Android</li><li>Spring Boot</li></ul>
+            <article class="tile blue" style="--i:5">
+                <div class="tag"><i></i>Software</div>
+                <h3>Full stack.</h3>
+                <div class="stack">
+                    <div class="layer" style="--n:0;--b:var(--blue)">React <small>frontend</small></div>
+                    <div class="layer" style="--n:1;--b:var(--lav)">Socket.IO <small>real-time</small></div>
+                    <div class="layer" style="--n:2;--b:var(--mint)">Node.js · Spring Boot <small>backend</small></div>
+                    <div class="layer" style="--n:3;--b:var(--peach)">PostgreSQL <small>data</small></div>
+                    <div class="layer" style="--n:4;--b:var(--pink)">Android <small>mobile</small></div>
+                </div>
+                <div class="git push">⎇ everything versioned with Git</div>
             </article>
-            <article class="dash blush">
-                <p class="mini-k">Cybersecurity</p>
-                <ol class="pkts slim">
-                    <li style="--i:0">Wireshark</li><li style="--i:1">TCP</li><li style="--i:2">TLS</li><li style="--i:3">Kerberos</li><li style="--i:4">DNS</li>
-                </ol>
-                <p class="foot">Encryption and digital signatures.</p>
+            <article class="tile mint" style="--i:6">
+                <div class="tag"><i></i>Cybersecurity</div>
+                <h3>Watching the wire.</h3>
+                <div class="net" aria-hidden="true">
+                    <div class="node">client</div>
+                    <div class="wire"><div class="pkt"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div></div>
+                    <div class="node">server</div>
+                </div>
+                <ul class="chips" id="sk-proto"><li>TCP</li><li>TLS</li><li>Kerberos</li><li>DNS</li></ul>
+                <div class="sub">Tools and concepts</div>
+                <ul class="chips"><li>Wireshark</li><li>Encryption</li><li>Digital signatures</li></ul>
             </article>
-            <article class="dash plan">
-                <p class="mini-k">Planning</p>
-                <div class="plan-grid">
-                    <div class="widget">
-                        <h3>Gantt</h3>
-                        <p>NeuroEase, Sep 2025 to Apr 2026.</p>
-                        <ul class="gantt">
-                            <li><span>Foundation</span><i style="--s:0%;--w:37%;--c:#6d5ef5"><b></b></i></li>
-                            <li><span>Caregiver</span><i style="--s:37%;--w:23%;--c:#1f9d6a"><b></b></i></li>
-                            <li><span>Patient</span><i style="--s:60%;--w:20%;--c:#2f7de1"><b></b></i></li>
-                            <li><span>Testing</span><i style="--s:80%;--w:10%;--c:#e07a2f"><b></b></i></li>
-                            <li><span>Ship</span><i style="--s:90%;--w:10%;--c:#d4537e"><b></b></i></li>
-                        </ul>
-                        <p class="axis"><span>Sep</span><span>Dec</span><span>Feb</span><span>Apr</span></p>
+            <article class="tile s2 butter" style="--i:7">
+                <div class="tag"><i></i>Planning</div>
+                <h3>How NeuroEase got built.</h3>
+                <div class="gantt">
+                    <span>Foundation</span><div class="track"><i style="--l:0%;--w:37%;--c:var(--blue)"></i></div>
+                    <span>Caregiver</span><div class="track"><i style="--l:37%;--w:23%;--c:var(--lav);transition-delay:.15s"></i></div>
+                    <span>Patient</span><div class="track"><i style="--l:60%;--w:20%;--c:var(--pink);transition-delay:.3s"></i></div>
+                    <span>Testing</span><div class="track"><i style="--l:80%;--w:10%;--c:var(--peach);transition-delay:.45s"></i></div>
+                    <span>Ship</span><div class="track"><i style="--l:90%;--w:10%;--c:var(--mint);transition-delay:.6s"></i></div>
+                    <div class="axis"><span>Sep 2025</span><span>Apr 2026</span></div>
+                </div>
+                <div class="minis push">
+                    <div class="mini">
+                        <b>Waterfall</b>
+                        <p>Five phases, each waiting on the one before: the API, the caregiver site, the patient site, testing, then docs and deploy.</p>
+                        <div class="falls" id="sk-falls"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i></div>
                     </div>
-                    <div class="widget">
-                        <h3>Waterfall</h3>
-                        <p>Each phase waited on the one above it.</p>
-                        <ol class="fall">
-                            <li style="--i:0;--c:#6d5ef5">Foundation and the API</li>
-                            <li style="--i:1;--c:#1f9d6a">Caregiver site</li>
-                            <li style="--i:2;--c:#2f7de1">Patient site</li>
-                            <li style="--i:3;--c:#e07a2f">Testing</li>
-                            <li style="--i:4;--c:#d4537e">Docs and deploy</li>
-                        </ol>
-                    </div>
-                    <div class="widget">
-                        <h3>Scrum</h3>
-                        <p>Ten sprints of two to three weeks.</p>
-                        <ol class="kanban">
-                            <li style="--c:#efe6ff">To do</li>
-                            <li style="--c:#d7e6ff">In progress</li>
-                            <li style="--c:#ffe0b8">Testing</li>
-                            <li style="--c:#d7efc4">Review</li>
-                            <li style="--c:#17181d">Done</li>
-                        </ol>
-                        <p class="foot">Scrum Master for Skills Hive, two sprints with the group. A story was Done only when the Definition of Done was met.</p>
+                    <div class="mini">
+                        <b>Scrum</b>
+                        <p>Ten sprints of two to three weeks. Scrum Master for Skills Hive, two sprints with the group.</p>
+                        <div class="sprints" id="sk-sprints"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                        <div class="cols">To do → In progress → Testing → Review → Done. A story was Done only when the Definition of Done was met.</div>
                     </div>
                 </div>
             </article>
@@ -588,6 +591,6 @@
         </p>
     </section>
 </main>
-<script src="app.js?v=22"></script>
+<script src="app.js?v=23"></script>
 </body>
 </html>
