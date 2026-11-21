@@ -589,9 +589,7 @@ html.js .reveal.in .certs li { animation: rise 0.45s ease both; animation-delay:
     display: grid;
     gap: 18px;
     margin: 18px 0 48px;
-    perspective: 1200px;
 }
-.proud .pcard { transform-style: preserve-3d; transition: transform 0.2s ease-out; }
 .deck button { transition: transform 0.3s ease; }
 .deck button[aria-selected="true"] { transform: translateY(-4px); }
 .role.is-on { position: relative; overflow: hidden; }
