@@ -451,6 +451,19 @@ html.js .stop.is-on .stamp { animation: stamp 0.55s cubic-bezier(0.2, 1.4, 0.3, 
 .stop.now .year { color: #17181d; }
 
 .work-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 14px; }
+.see-all {
+    margin-top: 6px;
+    background: #111;
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 18px;
+    font: 700 15px/1 var(--sans);
+    cursor: pointer;
+}
+.see-all:hover { transform: translateY(-2px); }
+.rest { scroll-margin-top: 84px; margin-top: 36px; }
+.rest[hidden] { display: none; }
 .grid { display: grid; gap: 28px 18px; margin-top: 22px; }
 .pcard { display: flex; flex-direction: column; min-width: 0; }
 .pcard.hide { display: none; }

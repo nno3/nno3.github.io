@@ -276,8 +276,21 @@
         btn.addEventListener("click", function () { showRole(n); });
     });
 
+    var seeAll = document.getElementById("see-all");
+    var rest = document.getElementById("rest");
+    if (seeAll && rest) {
+        seeAll.addEventListener("click", function () {
+            var open = rest.hasAttribute("hidden");
+            if (open) rest.removeAttribute("hidden");
+            else rest.setAttribute("hidden", "");
+            seeAll.setAttribute("aria-expanded", open ? "true" : "false");
+            seeAll.textContent = open ? "Hide the rest" : "See all the work";
+            if (open) rest.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        });
+    }
+
     var filters = document.querySelectorAll("[data-filter]");
-    var cards = document.querySelectorAll(".pcard");
+    var cards = document.querySelectorAll("#grid .pcard");
     filters.forEach(function (filter) {
         filter.addEventListener("click", function () {
             var kind = filter.getAttribute("data-filter");
