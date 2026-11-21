@@ -755,6 +755,7 @@ html.js .reveal.in .kanban li:nth-child(5) { animation-delay: 0.2s; }
 @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
 @media (max-width: 720px) {
+    html.js .reveal { transform: none; }
     .orbit { height: 390px; }
     .scene { width: min(520px, 92%); margin-left: calc(min(520px, 92%) / -2); }
     .scene[data-slot="-1"], .scene[data-slot="1"], .scene[data-slot="2"] {
