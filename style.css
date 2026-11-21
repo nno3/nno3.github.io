@@ -465,7 +465,7 @@ html.js .stop.is-on .stamp { animation: stamp 0.55s cubic-bezier(0.2, 1.4, 0.3, 
 .rest { scroll-margin-top: 84px; margin-top: 36px; }
 .rest[hidden] { display: none; }
 .grid { display: grid; gap: 28px 18px; margin-top: 22px; }
-.pcard { display: flex; flex-direction: column; min-width: 0; }
+.pcard { display: flex; flex-direction: column; min-width: 0; padding-bottom: 22px; border-bottom: 1px solid #c5cad3; }
 .pcard.hide { display: none; }
 .pcard.pop { animation: rise 0.4s ease; }
 .pmedia {
