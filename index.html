@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=21">
+    <link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
 <nav>
@@ -112,100 +112,115 @@
     <section id="skills" class="reveal">
         <p class="kicker">Skills</p>
         <h2>What I use.</h2>
-        <p class="lede">Pick a row. The bench on the side shows that set.</p>
-        <div class="bench">
-            <div class="skill-rows" role="tablist" aria-label="Skill groups">
-                <i class="indicator" aria-hidden="true"></i>
-                <button type="button" role="tab" data-skill="0" aria-selected="true"><span>01</span><div><h3>Programming</h3><p>Python, JavaScript, Java, C++, R, SQL.</p></div></button>
-                <button type="button" role="tab" data-skill="1" aria-selected="false"><span>02</span><div><h3>Languages</h3><p>Arabic and English, both fluent.</p></div></button>
-                <button type="button" role="tab" data-skill="2" aria-selected="false"><span>03</span><div><h3>Data</h3><p>pandas, PostgreSQL, MySQL, Power BI, D3.js, Excel, ETL, cleansing, mining, visualisation, and statistical analysis.</p></div></button>
-                <button type="button" role="tab" data-skill="3" aria-selected="false"><span>04</span><div><h3>AI</h3><p>scikit-learn, regression, random forests, clustering, OpenCV, scikit-image.</p></div></button>
-                <button type="button" role="tab" data-skill="4" aria-selected="false"><span>05</span><div><h3>Software</h3><p>Git, React, Node.js, Android, Spring Boot, Socket.IO.</p></div></button>
-                <button type="button" role="tab" data-skill="5" aria-selected="false"><span>06</span><div><h3>Cybersecurity</h3><p>Wireshark, TCP, TLS, Kerberos, DNS, encryption, digital signatures.</p></div></button>
-                <button type="button" role="tab" data-skill="6" aria-selected="false"><span>07</span><div><h3>Soft skills</h3><p>Teaching, mentoring, communication, critical thinking, group lead, accessibility, lab support, clear write-ups.</p></div></button>
-                <button type="button" role="tab" data-skill="7" aria-selected="false"><span>08</span><div><h3>Ways of working</h3><p>Scrum Master, Scrum, and a phased plan, with a group and alone.</p></div></button>
-            </div>
-            <div class="demo-panel">
-                <div class="demo is-on" data-demo="0">
-                    <p class="mini-k">Programming</p>
-                    <div class="term" aria-hidden="true">
-                        <span>python</span><span>javascript</span><span>java</span><span>c++</span><span>r</span><span>sql</span>
+        <p class="lede">Eight boards. The last one is how the work was planned.</p>
+        <div class="board">
+            <article class="dash sand">
+                <p class="mini-k">Programming</p>
+                <div class="term" aria-hidden="true">
+                    <span>python</span><span>javascript</span><span>java</span><span>c++</span><span>r</span><span>sql</span>
+                </div>
+            </article>
+            <article class="dash ink">
+                <p class="mini-k">Languages</p>
+                <div class="langs">
+                    <p class="ar">العربية</p>
+                    <p>English</p>
+                </div>
+                <p class="foot">Both fluent.</p>
+            </article>
+            <article class="dash butter">
+                <p class="mini-k">Soft skills</p>
+                <div class="meters">
+                    <div><b>100+</b><span>students in each lab</span></div>
+                    <div><b>15</b><span>first-years mentored</span></div>
+                    <div><b>0.67</b><span>IoU, from 0.14</span></div>
+                </div>
+                <ul class="pills">
+                    <li>Teaching</li><li>Mentoring</li><li>Communication</li><li>Critical thinking</li><li>Group lead</li><li>Accessibility</li><li>Lab support</li><li>Clear write-ups</li>
+                </ul>
+                <p class="foot">An empty retinal guess is already about 0.90 accurate, so IoU decided each step.</p>
+            </article>
+            <article class="dash mint data">
+                <p class="mini-k">Data</p>
+                <div class="clusters">
+                    <div>
+                        <h3>Tools</h3>
+                        <ul class="pills"><li>pandas</li><li>PostgreSQL</li><li>MySQL</li><li>Power BI</li><li>D3.js</li><li>Excel</li></ul>
+                    </div>
+                    <div>
+                        <h3>Prepare</h3>
+                        <ul class="pills"><li>ETL</li><li>Data cleansing</li><li>Data mining</li><li>Data transformation</li></ul>
+                    </div>
+                    <div>
+                        <h3>Read it</h3>
+                        <ul class="pills"><li>Data visualization</li><li>Data presentation</li><li>Statistical analysis</li><li>Data mart</li><li>Big data</li><li>Analysis</li><li>Analytics</li></ul>
                     </div>
                 </div>
-                <div class="demo" data-demo="1">
-                    <p class="mini-k">Languages</p>
-                    <div class="langs">
-                        <p class="ar">العربية</p>
-                        <p>English</p>
+                <p class="foot">IBM Data Analytics Foundations, finished 20 Nov 2026.</p>
+            </article>
+            <article class="dash ice">
+                <p class="mini-k">AI</p>
+                <ol class="pipe">
+                    <li>Regression</li>
+                    <li>Random forests</li>
+                    <li>Clustering</li>
+                </ol>
+                <ul class="pills"><li>scikit-learn</li><li>OpenCV</li><li>scikit-image</li></ul>
+            </article>
+            <article class="dash lilac softw">
+                <p class="mini-k">Software</p>
+                <ol class="stack">
+                    <li>React</li><li>Node.js</li><li>Socket.IO</li><li>PostgreSQL</li>
+                </ol>
+                <ul class="pills"><li>Git</li><li>Android</li><li>Spring Boot</li></ul>
+            </article>
+            <article class="dash blush">
+                <p class="mini-k">Cybersecurity</p>
+                <ol class="pkts slim">
+                    <li style="--i:0">Wireshark</li><li style="--i:1">TCP</li><li style="--i:2">TLS</li><li style="--i:3">Kerberos</li><li style="--i:4">DNS</li>
+                </ol>
+                <p class="foot">Encryption and digital signatures.</p>
+            </article>
+            <article class="dash plan">
+                <p class="mini-k">Planning</p>
+                <div class="plan-grid">
+                    <div class="widget">
+                        <h3>Gantt</h3>
+                        <p>NeuroEase, Sep 2025 to Apr 2026.</p>
+                        <ul class="gantt">
+                            <li><span>Foundation</span><i style="--s:0%;--w:37%;--c:#6d5ef5"><b></b></i></li>
+                            <li><span>Caregiver</span><i style="--s:37%;--w:23%;--c:#1f9d6a"><b></b></i></li>
+                            <li><span>Patient</span><i style="--s:60%;--w:20%;--c:#2f7de1"><b></b></i></li>
+                            <li><span>Testing</span><i style="--s:80%;--w:10%;--c:#e07a2f"><b></b></i></li>
+                            <li><span>Ship</span><i style="--s:90%;--w:10%;--c:#d4537e"><b></b></i></li>
+                        </ul>
+                        <p class="axis"><span>Sep</span><span>Dec</span><span>Feb</span><span>Apr</span></p>
                     </div>
-                    <p class="foot">Both fluent.</p>
-                </div>
-                <div class="demo" data-demo="2">
-                    <p class="mini-k">Data</p>
-                    <ul class="chips">
-                        <li>pandas</li><li>PostgreSQL</li><li>MySQL</li><li>Power BI</li><li>D3.js</li><li>Excel</li>
-                        <li>ETL</li><li>Data cleansing</li><li>Data mining</li><li>Data transformation</li>
-                        <li>Data visualization</li><li>Data presentation</li><li>Statistical analysis</li>
-                        <li>Data mart</li><li>Big data</li><li>Analysis</li><li>Analytics</li>
-                    </ul>
-                    <p class="foot">IBM Data Analytics Foundations, finished 20 Nov 2026.</p>
-                </div>
-                <div class="demo" data-demo="3">
-                    <p class="mini-k">AI</p>
-                    <div class="flow">
-                        <b>regression</b><span class="dash"></span><b>forests</b><span class="dash"></span><b>clustering</b>
+                    <div class="widget">
+                        <h3>Waterfall</h3>
+                        <p>Each phase waited on the one above it.</p>
+                        <ol class="fall">
+                            <li style="--i:0;--c:#6d5ef5">Foundation and the API</li>
+                            <li style="--i:1;--c:#1f9d6a">Caregiver site</li>
+                            <li style="--i:2;--c:#2f7de1">Patient site</li>
+                            <li style="--i:3;--c:#e07a2f">Testing</li>
+                            <li style="--i:4;--c:#d4537e">Docs and deploy</li>
+                        </ol>
                     </div>
-                    <ul class="chips">
-                        <li>scikit-learn</li><li>OpenCV</li><li>scikit-image</li>
-                    </ul>
-                </div>
-                <div class="demo" data-demo="4">
-                    <p class="mini-k">Software</p>
-                    <ol class="stack">
-                        <li>React</li><li>Node.js</li><li>Socket.IO</li><li>PostgreSQL</li>
-                    </ol>
-                    <ul class="chips">
-                        <li>Git</li><li>Android</li><li>Spring Boot</li>
-                    </ul>
-                </div>
-                <div class="demo" data-demo="5">
-                    <p class="mini-k">Cybersecurity</p>
-                    <ol class="pkts slim">
-                        <li style="--i:0">Wireshark</li><li style="--i:1">TCP</li><li style="--i:2">TLS</li><li style="--i:3">Kerberos</li><li style="--i:4">DNS</li>
-                    </ol>
-                    <p class="foot">Encryption and digital signatures.</p>
-                </div>
-                <div class="demo" data-demo="6">
-                    <p class="mini-k">Soft skills</p>
-                    <div class="proof">
-                        <article>
-                            <h3>Communication</h3>
-                            <p>Labs for 100+ students, mentoring, and a pharmacy counter. Arabic and English.</p>
-                        </article>
-                        <article>
-                            <h3>Critical thinking</h3>
-                            <p>On the retinal images, accuracy was the wrong score. An empty guess is already about 0.90, because vessels cover about 9% of the picture. IoU moved the work: 0.14, then 0.54 once the lighting was taken out, then 0.67.</p>
-                        </article>
+                    <div class="widget">
+                        <h3>Scrum</h3>
+                        <p>Ten sprints of two to three weeks.</p>
+                        <ol class="kanban">
+                            <li style="--c:#efe6ff">To do</li>
+                            <li style="--c:#d7e6ff">In progress</li>
+                            <li style="--c:#ffe0b8">Testing</li>
+                            <li style="--c:#d7efc4">Review</li>
+                            <li style="--c:#17181d">Done</li>
+                        </ol>
+                        <p class="foot">Scrum Master for Skills Hive, two sprints with the group. A story was Done only when the Definition of Done was met.</p>
                     </div>
-                    <ul class="chips">
-                        <li>Teaching</li><li>Mentoring</li><li>Group lead</li><li>Accessibility</li><li>Lab support</li><li>Clear write-ups</li>
-                    </ul>
                 </div>
-                <div class="demo" data-demo="7">
-                    <p class="mini-k">Ways of working</p>
-                    <div class="proof">
-                        <article>
-                            <h3>Scrum Master</h3>
-                            <p>Skills Hive, with the group. Two sprints in February and March 2025. I kept the board, the user stories, and the meetings moving, including a catch-up on 17 March.</p>
-                        </article>
-                        <article>
-                            <h3>Scrum</h3>
-                            <p>NeuroEase ran as ten sprints of two to three weeks. The board went To Do, In Progress, Testing, Review, Done, and a story was finished only when the Definition of Done was met.</p>
-                        </article>
-                    </div>
-                    <p class="foot">Before those sprints, NeuroEase had a phased schedule, in the shape of a waterfall plan: requirements, then the API, then the two sites. The build then ran as Scrum, alone there and with the group on Skills Hive.</p>
-                </div>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -573,6 +588,6 @@
         </p>
     </section>
 </main>
-<script src="app.js?v=21"></script>
+<script src="app.js?v=22"></script>
 </body>
 </html>
