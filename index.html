@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Naskh+Arabic:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=28">
+    <link rel="stylesheet" href="style.css?v=30">
 </head>
 <body>
 <nav>
@@ -16,7 +16,7 @@
     <div class="nav-links">
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
-        <a href="#work">Work</a>
+        <a href="#work">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#certificates">Certificates</a>
         <a class="nav-btn" href="#contact">Contact</a>
@@ -254,10 +254,20 @@
     </section>
 
     <section id="work" class="reveal">
-        <p class="kicker">Work</p>
+        <p class="kicker">Projects</p>
         <h2>Proudest.</h2>
         <p class="lede">The ones I would open first.</p>
         <div class="proud">
+            <article class="pcard tilt lead">
+                <a class="pmedia fit" style="--mat:#ffe56a" href="https://nno3.github.io/skills-hive/dashboard/" aria-label="Skills Hive"><span class="flag">I led it</span><img src="images/skillshive.jpg" alt="Skills Hive dashboard with courses completed, learning hours, a bronze badge, and recommended courses."></a>
+                <div class="pbody">
+                    <h3><a href="https://nno3.github.io/skills-hive/dashboard/">Skills Hive</a></h3>
+                    <p class="got">I built the chatbot, the dashboard, and the game.</p>
+                    <p class="did">I contributed to a lot of the other tasks and the UI. Scrum Master for the group across two sprints.</p>
+                    <ul class="boxes"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
+                    <p class="links mini"><a href="https://nno3.github.io/skills-hive/dashboard/">Dashboard</a><a class="ghost" href="https://github.com/nno3/skills-hive">Code</a></p>
+                </div>
+            </article>
             <article class="pcard tilt">
                 <a class="pmedia fit" style="--mat:#f3ead8" href="https://neuroease-dashboard.onrender.com/" aria-label="NeuroEase"><span class="flag">Two sites</span><img src="images/neuroease.jpg" alt="NeuroEase caregiver activity page, with memory and math sessions."></a>
                 <div class="pbody">
@@ -274,14 +284,6 @@
                     <h3><a href="https://nno3.github.io/BrightonGreen/">GreenBrighton</a></h3>
                     <p class="got">Six interviews set the content, and the site meets WCAG 2.1 AA.</p>
                     <p class="links mini"><a href="https://nno3.github.io/BrightonGreen/">Live</a><a class="ghost" href="https://github.com/nno3/BrightonGreen">Code</a></p>
-                </div>
-            </article>
-            <article class="pcard tilt">
-                <a class="pmedia" style="--mat:#f3efc0" href="https://nno3.github.io/skills-hive/hexahive/" aria-label="HexaHive"><span class="flag">Puzzle</span><span class="paper" aria-hidden="true"><b>Hex</b><small>clear a full row</small></span></a>
-                <div class="pbody">
-                    <h3><a href="https://nno3.github.io/skills-hive/hexahive/">HexaHive</a></h3>
-                    <p class="got">The hexagonal puzzle I built for Skills Hive, the group project I led.</p>
-                    <p class="links mini"><a href="https://nno3.github.io/skills-hive/hexahive/">Live</a><a class="ghost" href="https://github.com/nno3/skills-hive">Code</a></p>
                 </div>
             </article>
             <article class="pcard tilt">
@@ -309,12 +311,12 @@
                 </div>
             </article>
         </div>
-        <button type="button" class="see-all" id="see-all" aria-expanded="false" aria-controls="rest">See all the work</button>
+        <button type="button" class="see-all" id="see-all" aria-expanded="false" aria-controls="rest"><span class="see-prompt" aria-hidden="true">&gt;_</span><span class="see-label">See all the projects</span></button>
         <div class="rest" id="rest" hidden>
         <div class="work-head">
             <div>
                 <p class="kicker">Everything else</p>
-                <h2>All the work.</h2>
+                <h2>All the projects.</h2>
             </div>
             <div class="filters" role="tablist" aria-label="Filter projects">
                 <button type="button" data-filter="all" aria-selected="true">All</button>
@@ -414,6 +416,16 @@
                     <p class="did">I contributed to a lot of the other tasks and the UI. Scrum Master for the group across two sprints.</p>
                     <ul class="boxes"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
                     <p class="links mini"><a href="https://nno3.github.io/skills-hive/dashboard/">Dashboard</a><a class="ghost" href="https://github.com/nno3/skills-hive">Code</a></p>
+                </div>
+            </article>
+            <article class="pcard" data-kind="software">
+                <a class="pmedia" style="--mat:#f3efc0" href="https://nno3.github.io/skills-hive/hexahive/" aria-label="HexaHive"><span class="flag">Puzzle</span><span class="paper" aria-hidden="true"><b>Hex</b><small>clear a full row</small></span></a>
+                <div class="pbody">
+                    <h3><a href="https://nno3.github.io/skills-hive/hexahive/">HexaHive</a></h3>
+                    <p class="got">The hexagonal puzzle I built for Skills Hive, the group project I led.</p>
+                    <p class="did">Arrange the pieces and clear a full row.</p>
+                    <ul class="boxes"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
+                    <p class="links mini"><a href="https://nno3.github.io/skills-hive/hexahive/">Live</a><a class="ghost" href="https://github.com/nno3/skills-hive">Code</a></p>
                 </div>
             </article>
             <article class="pcard" data-kind="software">
@@ -609,6 +621,6 @@
         </p>
     </section>
 </main>
-<script src="app.js?v=26"></script>
+<script src="app.js?v=27"></script>
 </body>
 </html>

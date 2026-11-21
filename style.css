@@ -452,16 +452,28 @@ html.js .stop.is-on .stamp { animation: stamp 0.55s cubic-bezier(0.2, 1.4, 0.3, 
 
 .work-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 14px; }
 .see-all {
-    margin-top: 6px;
-    background: #111;
-    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 12px 18px 12px 12px;
     border: 0;
-    border-radius: 999px;
-    padding: 13px 18px;
-    font: 700 15px/1 var(--sans);
+    border-radius: 14px;
     cursor: pointer;
+    color: #fff;
+    font: 700 15px/1 "JetBrains Mono", ui-monospace, monospace;
+    background: linear-gradient(100deg, #5b6cff 0%, #9b4dff 40%, #ff4f9a 74%, #ff9a2e 100%);
+    box-shadow: 5px 5px 0 #1b1233;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.see-all:hover { transform: translateY(-2px); }
+.see-all .see-prompt {
+    color: #24183f;
+    background: #fff;
+    border-radius: 8px;
+    padding: 7px 8px;
+}
+.see-all:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 #1b1233; }
+.see-all:focus-visible { outline: 3px solid #ff9a2e; outline-offset: 3px; }
 .rest { scroll-margin-top: 84px; margin-top: 36px; }
 .rest[hidden] { display: none; }
 .grid { display: grid; gap: 28px 18px; margin-top: 22px; }
@@ -792,6 +804,9 @@ html.js .reveal.in .kanban li:nth-child(5) { animation-delay: 0.2s; }
     .plan-grid { grid-template-columns: 1.3fr 0.9fr 1fr; }
     .clusters { grid-template-columns: 1.1fr 0.9fr 1.1fr; }
     .proud { grid-template-columns: 1fr 1fr; }
+    .proud .lead { grid-column: 1 / -1; }
+    .proud .lead .pmedia { height: 320px; }
+    .proud .lead .pmedia img { object-fit: cover; object-position: top center; top: 16px; height: calc(100% - 16px); }
     .proof { grid-template-columns: 1fr 1fr; }
     .bench { grid-template-columns: 1.05fr 0.95fr; }
     .stops { grid-template-columns: 1fr 1fr 1fr; align-items: start; }
@@ -817,6 +832,7 @@ html.js .reveal.in .kanban li:nth-child(5) { animation-delay: 0.2s; }
     html.js .pkts li, .term span, .demo.is-on .chips li, .demo.is-on .stack li { animation: none; opacity: 1; transform: none; }
     html.js .stop.is-on .stamp, html.js .reveal.in .certs li, .role.is-on::after, .deck button, html.js .reveal.in .gantt b, html.js .reveal.in .fall li, html.js .reveal.in .kanban li, html.js .reveal.in .flow .dashline, .dash { animation: none; transition: none; }
     .meter i.run { animation: none; width: 100%; }
+    .see-all, .see-all:hover { transition: none; transform: none; }
 }
 
 /* Skills bento */

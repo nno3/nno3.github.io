@@ -284,7 +284,7 @@
             if (open) rest.removeAttribute("hidden");
             else rest.setAttribute("hidden", "");
             seeAll.setAttribute("aria-expanded", open ? "true" : "false");
-            seeAll.textContent = open ? "Hide the rest" : "See all the work";
+            seeAll.querySelector(".see-label").textContent = open ? "Hide the rest" : "See all the projects";
             if (open) rest.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
         });
     }
