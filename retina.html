@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=22">
+    <link rel="stylesheet" href="style.css?v=27">
 </head>
 <body>
 <nav>
@@ -29,6 +29,11 @@
         <div><strong>0.80</strong><span>Dice</span></div>
         <div><strong>0.67</strong><span>held-out IoU</span></div>
     </div>
+
+    <figure class="shot">
+        <img src="images/retina.jpg" alt="Best, median, and worst retinal images, each shown beside the ground truth, the segmentation, and the errors.">
+        <figcaption>Best, median, and worst of the 15 images. Red is a pixel marked as a vessel that was not one. Green is a vessel the pipeline missed.</figcaption>
+    </figure>
 
     <h2>The problem</h2>
     <p>Vessel contrast is low, illumination is uneven, and the optic disc and macula create edges that look like vessels. An empty prediction already scores about 0.90 accuracy, because vessels cover only about 9% of each image, so overlap (IoU) was the measure that decided each step.</p>

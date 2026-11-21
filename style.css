@@ -632,6 +632,9 @@ html.js .role.is-on { display: block; animation: rise 0.4s ease; }
 .contact .btn { font-size: 15px; }
 
 .sheet { padding-top: 28px; }
+.sheet .shot { margin: 22px 0 0; }
+.sheet .shot img { width: 100%; height: auto; border-radius: 16px; display: block; }
+.sheet .shot figcaption { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
 .statrow { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 22px 0; }
 .statrow div { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
 .statrow strong { display: block; font-size: 28px; letter-spacing: -0.04em; }
@@ -862,7 +865,6 @@ html.js #skills .tile.in:hover{box-shadow:0 20px 40px -22px color-mix(in srgb,va
 #skills .chips li.on{background:var(--tc);border-color:var(--tc);color:var(--text);transform:translateY(-2px);font-weight:600}
 #skills .sub{font-size:13px;color:var(--td);margin:14px 0 6px;font-weight:600}
 #skills .push{margin-top:auto}
-#skills .note{font-size:13px;color:var(--td);margin:12px 0 0;font-weight:600}
 #skills .term{font-family:var(--mono);background:#fff;color:var(--text);border:1px solid color-mix(in srgb,var(--tc) 50%,#fff);border-radius:14px;padding:14px 18px;font-size:14px;font-weight:500;margin:0 0 14px;min-height:88px}
 #skills .term span{display:inline;opacity:1;transform:none;animation:none}
 #skills .term span::before{content:none}
